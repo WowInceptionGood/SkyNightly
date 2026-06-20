@@ -232,7 +232,7 @@ namespace Chaco
         {
             if (string.IsNullOrEmpty(text))
             {
-                DialogTube?.Invoke(this, new DialogBottle(DialogType.Warning, "Chaco only supports text messages."));
+                DialogTube?.Invoke(this, new DialogBottle(DialogType.Warning, "The plugin currently only supports text messages."));
                 return false;
             }
 
@@ -315,7 +315,7 @@ namespace Chaco
 
                 var friendly = ex.ErrorCode == "RATE_LIMITED"
                     ? "Provider rate limit hit. Try again shortly."
-                    : $"Chaco error: {ex.Message}";
+                    : $"Error: {ex.Message}";
 
                 DialogTube?.Invoke(this, new DialogBottle(DialogType.Error, friendly, ex.ToString()));
                 return false;
@@ -332,13 +332,13 @@ namespace Chaco
 
         public Task<bool> EditMessage(string conversationId, string messageId, string newText)
         {
-            DialogTube?.Invoke(this, new DialogBottle(DialogType.Warning, "Editing isn't supported for Chaco conversations."));
+            DialogTube?.Invoke(this, new DialogBottle(DialogType.Warning, "Message editing is not supported."));
             return Task.FromResult(false);
         }
 
         public Task<bool> DeleteMessage(string conversationId, string messageId)
         {
-            DialogTube?.Invoke(this, new DialogBottle(DialogType.Warning, "Deleting isn't supported for Chaco conversations."));
+            DialogTube?.Invoke(this, new DialogBottle(DialogType.Warning, "Message deleting is not supported."));
             return Task.FromResult(false);
         }
 

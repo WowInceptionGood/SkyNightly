@@ -595,7 +595,7 @@ namespace Skymu.ViewModels
                 if (SelectedConversation?.Identifier == eR.ConversationId)
                 {
                     ActiveConversation.Add(eR.Item);
-                    if (eR.Item is Message m && m.Author?.Identifier == Universal.CurrentUser?.Identifier) SoundManager.Play("IM");
+                    if (eR.Item is Message m && m.Author?.Identifier != Universal.CurrentUser?.Identifier) SoundManager.Play("IM");
                 }
                 if (eR.Item is Message message)
                 {

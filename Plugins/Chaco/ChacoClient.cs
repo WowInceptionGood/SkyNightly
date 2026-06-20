@@ -113,7 +113,7 @@ namespace Chaco
                     if (!response.IsSuccessStatusCode)
                     {
                         await ThrowForErrorResponseAsync(response, cancellationToken).ConfigureAwait(false);
-                        throw new ChacoException("Chaco request failed.", "UNKNOWN"); // unreachable; satisfies flow analysis
+                        throw new ChacoException("Chat Completions request failed.", "UNKNOWN"); // unreachable; satisfies flow analysis
                     }
 
                     var fullText = new StringBuilder();
@@ -166,7 +166,7 @@ namespace Chaco
                     if (!response.IsSuccessStatusCode)
                     {
                         await ThrowForErrorResponseAsync(response, cancellationToken).ConfigureAwait(false);
-                        throw new ChacoException("Chaco request failed.", "UNKNOWN"); // unreachable; satisfies flow analysis
+                        throw new ChacoException("Chat Completions request failed.", "UNKNOWN"); // unreachable; satisfies flow analysis
                     }
 
                     var json = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
@@ -244,7 +244,7 @@ namespace Chaco
         private static async Task ThrowForErrorResponseAsync(HttpResponseMessage response, CancellationToken cancellationToken)
         {
             var body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-            string message = $"Chaco request failed with status {(int)response.StatusCode}. Body: {body}";
+            string message = $"Request failed with status {(int)response.StatusCode}. Body: {body}";
             string code = (int)response.StatusCode == 429 ? "RATE_LIMITED" : "UNKNOWN";
             try
             {
