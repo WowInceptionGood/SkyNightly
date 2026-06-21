@@ -20,28 +20,8 @@ namespace Skymu.Windows
 {
     internal class AutoLaunch
     {
-        private static bool _initialized;
-
-        internal static void Initialize()
-        {
-            if (_initialized)
-                return;
-            _initialized = true;
-
-            Settings.Default.PropertyChanged += Settings_PropertyChanged;
-            Settings.StartOnStartup = GetStartOnStartup();
-        }
-
-        private static void Settings_PropertyChanged(
-            object sender,
-            System.ComponentModel.PropertyChangedEventArgs e
-        )
-        {
-            if (e.PropertyName == "StartOnStartup")
-                SetSkymuStartOnComputerStart(Settings.StartOnStartup);
-        }
-
-        private static bool GetStartOnStartup()
+        internal const bool BootstrapValue = true;
+        internal static bool Get()
         {
             using (
                 RegistryKey key = Registry.CurrentUser.OpenSubKey(
@@ -51,12 +31,18 @@ namespace Skymu.Windows
             )
             {
                 if (key == null)
-                    return false;
+                {
+                    Set(BootstrapValue);
+                    return BootstrapValue;
+                }
 
                 object value = key.GetValue(Universal.Name);
 
                 if (value == null)
-                    return false;
+                {
+                    Set(BootstrapValue);
+                    return BootstrapValue;
+                }
 
                 string currentPath = "\"" + Process.GetCurrentProcess().MainModule.FileName + "\"";
 
@@ -68,7 +54,7 @@ namespace Skymu.Windows
             }
         }
 
-        private static void SetSkymuStartOnComputerStart(bool yes)
+        internal static void Set(bool yes)
         {
             using (
                 RegistryKey key = Registry.CurrentUser.OpenSubKey(

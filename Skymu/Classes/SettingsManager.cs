@@ -22,97 +22,9 @@ namespace Skymu.Preferences
 {
     public static class Settings
     {
-        private const int ConfigRevision = 1;
-        public static readonly SettingsProxy Default = new SettingsProxy();
+        private const int ConfigRevision = 2;
 
-        public class SettingsProxy : INotifyPropertyChanged
-        {
-            public event PropertyChangedEventHandler PropertyChanged;
-
-            internal void Notify(string n) =>
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(n));
-
-            private static readonly Dictionary<string, PropertyInfo> _props =
-                new Dictionary<string, PropertyInfo>();
-
-            static SettingsProxy()
-            {
-                foreach (
-                    var p in typeof(Settings).GetProperties(
-                        BindingFlags.Public | BindingFlags.Static
-                    )
-                )
-                    _props[p.Name] = p;
-            }
-
-            public object this[string key]
-            {
-                get => _props.TryGetValue(key, out var p) ? p.GetValue(null) : null;
-                set
-                {
-                    if (!_props.TryGetValue(key, out var p))
-                        return;
-                    try
-                    {
-                        var converted = Convert.ChangeType(value, p.PropertyType);
-                        p.SetValue(null, converted);
-                        Notify(key);
-                    }
-                    catch { }
-                }
-            }
-        }
-
-        #region UI/MainWindow
-
-        public static double ConvListWidth
-        {
-            get => SELECT("ConvListWidth", -1.0, "UI/MainWindow");
-            set => WRITE("ConvListWidth", value, nameof(ConvListWidth), "UI/MainWindow");
-        }
-
-        public static bool SaveWindowPosition
-        {
-            get => SELECT("SaveWindowPosition", true, "UI/MainWindow");
-            set => WRITE("SaveWindowPosition", value, nameof(SaveWindowPosition), "UI/MainWindow");
-        }
-
-        #endregion
-
-
-        #region UI/MainWindow40
-
-        public static double Height
-        {
-            get => SELECT("Height", (double)-1, "UI/MainWindow40");
-            set => WRITE("Height", value, nameof(Height), "UI/MainWindow40");
-        }
-
-        public static bool Maximized
-        {
-            get => SELECT("Maximized", false, "UI/MainWindow40");
-            set => WRITE("Maximized", value, nameof(Maximized), "UI/MainWindow40");
-        }
-
-        public static double Width
-        {
-            get => SELECT("Width", (double)-1, "UI/MainWindow40");
-            set => WRITE("Width", value, nameof(Width), "UI/MainWindow40");
-        }
-
-        public static double X
-        {
-            get => SELECT("X", (double)-1, "UI/MainWindow40");
-            set => WRITE("X", value, nameof(X), "UI/MainWindow40");
-        }
-
-        public static double Y
-        {
-            get => SELECT("Y", (double)-1, "UI/MainWindow40");
-            set => WRITE("Y", value, nameof(Y), "UI/MainWindow40");
-        }
-
-        #endregion
+        #region UI/General
 
         public static bool StartMinimized
         {
@@ -205,18 +117,6 @@ namespace Skymu.Preferences
             set => WRITE("SoundPack", value, nameof(SoundPack), "UI/General");
         }
 
-        public static bool AutoLogin
-        {
-            get => SELECT("AutoLogin", true, "UI/Login");
-            set => WRITE("AutoLogin", value, nameof(AutoLogin), "UI/Login");
-        }
-
-        public static bool SaveCredentials
-        {
-            get => SELECT("SaveCredentials", true, "UI/Login");
-            set => WRITE("SaveCredentials", value, nameof(SaveCredentials), "UI/Login");
-        }
-
         public static bool AutoSpeedTest
         {
             get => SELECT("AutoSpeedTest", false, "UI/General");
@@ -263,35 +163,23 @@ namespace Skymu.Preferences
             get => SELECT("BlueNotifications", false, "UI/General");
             set => WRITE("BlueNotifications", value, nameof(BlueNotifications), "UI/General");
         }
-        public static bool StartOnStartup
-        {
-            get => SELECT("StartOnStartup", false, "UI/General");
-            set => WRITE("StartOnStartup", value, nameof(StartOnStartup), "UI/General");
-        }
+        /// <summary>
+        /// If FALSE dynamic window colors will be used, i.e. inactive window = gray gradient, active window = blue gradient.
+        /// If TRUE a single solid window color will be maintained whether the window is active or inactive.
+        /// </summary>
         public static bool FallbackFillColors
         {
             get => SELECT("FallbackFillColors", false, "UI/General");
             set => WRITE("FallbackFillColors", value, nameof(FallbackFillColors), "UI/General");
         }
-        public static bool Anonymize
+        /// <summary>
+        /// If FALSE original versions of edited and deleted messages will not be stored.
+        /// If TRUE original versions of edited and deleted messages will be stored. Not recommended for message streaming plugins.
+        /// </summary>
+        public static bool StoreMessageHistory
         {
-            get => SELECT("Anonymize", true, "UI/General");
-            set => WRITE("Anonymize", value, nameof(Anonymize), "UI/General");
-        }
-        public static bool FirstRunCompleted
-        {
-            get => SELECT("FirstRunCompleted", false, "UI/General");
-            set => WRITE("FirstRunCompleted", value, nameof(FirstRunCompleted), "UI/General");
-        }
-        public static bool DisablePingbacks
-        {
-            get => SELECT("DisablePingbacks", false, "UI/General");
-            set => WRITE("DisablePingbacks", value, nameof(DisablePingbacks), "UI/General");
-        }
-        public static bool MessageLogger
-        {
-            get => SELECT("MessageLogger", false, "UI/General");
-            set => WRITE("MessageLogger", value, nameof(MessageLogger), "UI/General");
+            get => SELECT("StoreMessageHistory", false, "UI/General");
+            set => WRITE("StoreMessageHistory", value, nameof(StoreMessageHistory), "UI/General");
         }
         public static bool NikoIcons
         {
@@ -322,11 +210,145 @@ namespace Skymu.Preferences
             get => SELECT("HideLeftHandSide", false, "UI/General");
             set => WRITE("HideLeftHandSide", value, nameof(HideLeftHandSide), "UI/General");
         }
-        public static bool SuppressOldRuntimeWarnings
+
+        #endregion
+
+        #region UI/Login
+
+        public static bool AutoLogin
         {
-            get => SELECT("SuppressOldRuntimeWarnings", false, "UI/General");
-            set => WRITE("SuppressOldRuntimeWarnings", value, nameof(SuppressOldRuntimeWarnings), "UI/General");
+            get => SELECT("AutoLogin", true, "UI/Login");
+            set => WRITE("AutoLogin", value, nameof(AutoLogin), "UI/Login");
         }
+
+        public static bool SaveCredentials
+        {
+            get => SELECT("SaveCredentials", true, "UI/Login");
+            set => WRITE("SaveCredentials", value, nameof(SaveCredentials), "UI/Login");
+        }
+
+        #endregion
+
+        #region UI/MainWindow
+
+        public static double ConvListWidth
+        {
+            get => SELECT("ConvListWidth", -1.0, "UI/MainWindow");
+            set => WRITE("ConvListWidth", value, nameof(ConvListWidth), "UI/MainWindow");
+        }
+
+        public static bool SaveWindowPosition
+        {
+            get => SELECT("SaveWindowPosition", true, "UI/MainWindow");
+            set => WRITE("SaveWindowPosition", value, nameof(SaveWindowPosition), "UI/MainWindow");
+        }
+
+        #endregion
+
+        #region UI/MainWindow40
+
+        public static double Height
+        {
+            get => SELECT("Height", (double)-1, "UI/MainWindow40");
+            set => WRITE("Height", value, nameof(Height), "UI/MainWindow40");
+        }
+
+        public static bool Maximized
+        {
+            get => SELECT("Maximized", false, "UI/MainWindow40");
+            set => WRITE("Maximized", value, nameof(Maximized), "UI/MainWindow40");
+        }
+
+        public static double Width
+        {
+            get => SELECT("Width", (double)-1, "UI/MainWindow40");
+            set => WRITE("Width", value, nameof(Width), "UI/MainWindow40");
+        }
+
+        public static double X
+        {
+            get => SELECT("X", (double)-1, "UI/MainWindow40");
+            set => WRITE("X", value, nameof(X), "UI/MainWindow40");
+        }
+
+        public static double Y
+        {
+            get => SELECT("Y", (double)-1, "UI/MainWindow40");
+            set => WRITE("Y", value, nameof(Y), "UI/MainWindow40");
+        }
+
+        #endregion
+
+        #region Skymu/Server
+
+        /// <summary>
+        /// If FALSE user statistics like display name and username will be sent to Skymu servers. (Opt-in)
+        /// If TRUE user statistics will be anonymized and random data will be sent to the servers. (Default)
+        /// </summary>
+        public static bool Anonymize
+        {
+            get => SELECT("Anonymize", true, "Skymu/Server");
+            set => WRITE("Anonymize", value, nameof(Anonymize), "Skymu/Server");
+        }
+        /// <summary>
+        /// If FALSE Skymu will make connections to skymu.app servers as usual.
+        /// If TRUE Skymu will block all connections to skymu.app servers.
+        /// </summary>
+        public static bool BlockSkymuServerConnections
+        {
+            get => SELECT("BlockSkymuServerConnections", false, "Skymu/Server");
+            set => WRITE("BlockSkymuServerConnections", value, nameof(BlockSkymuServerConnections), "Skymu/Server");
+        }
+        /// <summary>
+        /// If FALSE a dialog will be shown asking the user to un-anonymize him or herself to improve the user list.
+        /// If TRUE no dialog will be shown. Automatically set to TRUE after dialog is shown once.
+        /// </summary>
+        public static bool AnonymizeOptOutShown
+        {
+            get => SELECT("FirstRunCompleted", false, "Skymu/Server");
+            set => WRITE("FirstRunCompleted", value, nameof(AnonymizeOptOutShown), "Skymu/Server");
+        }
+
+        #endregion
+
+        #region Skymu/System
+
+        /// <summary>
+        /// If FALSE a warning will be shown if you are running a version of Windows or Wine with incompatibilities.
+        /// If TRUE no warning will be shown. Automatically set to TRUE after warning is shown once.
+        /// </summary>
+        public static bool OldPlatformWarningShown
+        {
+            get => SELECT("OldPlatformWarningShown", false, "Skymu/System");
+            set => WRITE("OldPlatformWarningShown", value, nameof(OldPlatformWarningShown), "Skymu/System");
+        }
+        /// <summary>
+        /// If FALSE warnings will be shown if you are running an older version of .NET than the latest supported.
+        /// If TRUE no warning will be shown. Set to TRUE if user clicks "Do not show this again" on a warning.
+        /// </summary>
+        public static bool ShowOldDotNetWarnings
+        {
+            get => SELECT("ShowOldDotNetWarnings", false, "Skymu/System");
+            set => WRITE("ShowOldDotNetWarnings", value, nameof(ShowOldDotNetWarnings), "Skymu/System");
+        }
+
+        #endregion
+
+        #region Custom
+
+        /// <summary>
+        /// If FALSE Skymu will not start when the computer starts.
+        /// If TRUE Skymu will start when the computer starts.
+        /// </summary>
+        public static bool AutoLaunch
+        {
+            get => Windows.AutoLaunch.Get();
+            set => Windows.AutoLaunch.Set(value);
+        }
+
+        #endregion
+
+        #region Yggdrasil (Ratatoskr)
 
         public static CertStore CertificateStore
         {
@@ -339,6 +361,8 @@ namespace Skymu.Preferences
             get => Y_SELECT("CertPath", string.Empty);
             set => Y_WRITE("CertPath", value, nameof(CertPath));
         }
+
+        #endregion
 
         public static void Save() { }
 
@@ -505,8 +529,6 @@ namespace Skymu.Preferences
             "ratatoskr.xml"
         );
 
-        #region Yggdrasil config
-
         private static XDocument Y_LoadOrCreate()
         {
             if (File.Exists(Y_FilePath))
@@ -557,6 +579,45 @@ namespace Skymu.Preferences
             catch { }
         }
 
-        #endregion
+        public static readonly SettingsProxy Default = new SettingsProxy();
+
+        public class SettingsProxy : INotifyPropertyChanged
+        {
+            public event PropertyChangedEventHandler PropertyChanged;
+
+            internal void Notify(string n) =>
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(n));
+
+            private static readonly Dictionary<string, PropertyInfo> _props =
+                new Dictionary<string, PropertyInfo>();
+
+            static SettingsProxy()
+            {
+                foreach (
+                    var p in typeof(Settings).GetProperties(
+                        BindingFlags.Public | BindingFlags.Static
+                    )
+                )
+                    _props[p.Name] = p;
+            }
+
+            public object this[string key]
+            {
+                get => _props.TryGetValue(key, out var p) ? p.GetValue(null) : null;
+                set
+                {
+                    if (!_props.TryGetValue(key, out var p))
+                        return;
+                    try
+                    {
+                        var converted = Convert.ChangeType(value, p.PropertyType);
+                        p.SetValue(null, converted);
+                        Notify(key);
+                    }
+                    catch { }
+                }
+            }
+        }
+
     }
 }

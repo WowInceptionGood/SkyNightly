@@ -439,13 +439,13 @@
                 Padding="6,0"
                 Content="{Binding [sF_USERENTRY_CB_START_SKYPE]}"
                 Foreground="{StaticResource Text.VeryHighContrast}"
-                IsChecked="{Binding Path=[StartOnStartup], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
+                IsChecked="{Binding Path=[AutoLaunch], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
             <CheckBox
                 Margin="0,5"
                 Padding="6,0"
-                Content="Retain original versions of edited and deleted messages (MessageLogger)"
+                Content="Retain original versions of edited and deleted messages"
                 Foreground="{StaticResource Text.VeryHighContrast}"
-                IsChecked="{Binding Path=[MessageLogger], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
+                IsChecked="{Binding Path=[StoreMessageHistory], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
 
             <Rectangle
                 Height="1"
@@ -558,7 +558,7 @@
                 Margin="0,5"
                 HorizontalAlignment="Left"
                 Foreground="{StaticResource Text.VeryHighContrast}"
-                IsChecked="{Binding Path=[DisablePingbacks], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}">
+                IsChecked="{Binding Path=[BlockSkymuServerConnections], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}">
                 <TextBlock Margin="2,0" TextWrapping="Wrap"><Run Text="Completely block communication with the Skymu server and the updater (warning: not recommended, doing this breaks features in the Skymu client!)" /></TextBlock>
             </CheckBox>
 

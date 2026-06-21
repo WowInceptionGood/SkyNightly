@@ -656,7 +656,7 @@ namespace Skymu.ViewModels
                 {
                     int index = ActiveConversation.IndexOf(deleted_msg);
                     ActiveConversation.RemoveAt(index);
-                    if (Settings.MessageLogger)
+                    if (Settings.StoreMessageHistory)
                     {
                         deleted_msg.Text += " ==[deleted]==";
                         ActiveConversation.Insert(index, deleted_msg);
@@ -678,7 +678,7 @@ namespace Skymu.ViewModels
                 if (index != -1)
                 {
                     Message edited_msg = eE.NewItem as Message;
-                    if (!Settings.MessageLogger)
+                    if (!Settings.StoreMessageHistory)
                     {
                         ActiveConversation.RemoveAt(index);
                     }
@@ -686,7 +686,7 @@ namespace Skymu.ViewModels
                     edited_msg.Text += " ==[edited]==";
 
                     int insertIndex = Math.Min(
-                        index + (Settings.MessageLogger ? 1 : 0),
+                        index + (Settings.StoreMessageHistory ? 1 : 0),
                         ActiveConversation.Count
                     );
 
@@ -832,7 +832,7 @@ namespace Skymu.ViewModels
 
         private async Task SkymuApiStatusHandler()
         {
-            if (Settings.DisablePingbacks)
+            if (Settings.BlockSkymuServerConnections)
                 return;
             await UserCountAPI.GenerateUID();
             await UserCountAPI.SetUserStatus(

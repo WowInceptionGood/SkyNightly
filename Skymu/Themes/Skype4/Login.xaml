@@ -1,4 +1,4 @@
-﻿<!-- 
+﻿<!--
     ============================================================
     Copyright © The Skymu Team and other contributors.
     For any inquiries or concerns, email contact@skymu.app.
@@ -33,7 +33,7 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Window.Resources>
-        
+
         <Style x:Key="HoverUnderlineHyperlink" TargetType="{x:Type Hyperlink}">
             <Setter Property="Foreground" Value="{StaticResource Text.Hyperlink}" />
             <Setter Property="TextDecorations" Value="{x:Null}" />
@@ -194,7 +194,6 @@
                         LeftWidth="15"
                         PressedIndex="4"
                         RightWidth="15"
-                        Themeable="True"
                         Source="Assets/Themeable/Login/pill.png"
                         StackDirection="Vertical"
                         Text="{Binding [sZAPBUTTON_SIGNIN]}"
@@ -202,7 +201,8 @@
                         TextFont="Tahoma"
                         TextHorizontalAlignment="Center"
                         TextSize="11"
-                        TextWeight="Bold" />
+                        TextWeight="Bold"
+                        Themeable="True" />
                     <!--  Footer panel  -->
                     <Border
                         x:Name="footerPanel"
@@ -232,7 +232,7 @@
                                 Content="{Binding [sF_USERENTRY_CB_START_SKYPE]}"
                                 FontFamily="Tahoma"
                                 FontSize="11"
-                                IsChecked="{Binding Path=[StartOnStartup], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
+                                IsChecked="{Binding Path=[AutoLaunch], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
                         </StackPanel>
                     </Border>
                 </Grid>

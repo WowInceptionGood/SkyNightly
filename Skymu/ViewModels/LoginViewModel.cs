@@ -193,11 +193,14 @@ namespace Skymu.ViewModels
             mainWindow.Show();
             SoundManager.Play("LOGIN");
             new Updater();
-
             string brand = Settings.BrandingName;
-            PlatformType platform = Runtime.DetectOS();
 
-            if (!Settings.FirstRunCompleted)
+            // something must have went wrong with Runtime.DetectOS() at app startup
+            // both code blocks below depend on knowing the OS, so don't run them
+            if (!Enum.TryParse(Universal.Platform, true, out PlatformType platform)) return;
+
+            // request the user to publish their details on the public userlist
+            if (!Settings.AnonymizeOptOutShown)
             {
                 Dialog dlg = null;
                 dlg = new Dialog(
@@ -210,7 +213,7 @@ namespace Skymu.ViewModels
                     new Action(() =>
                     {
                         Settings.Anonymize = true;
-                        Settings.FirstRunCompleted = true;
+                        Settings.AnonymizeOptOutShown = true;
                         Settings.Save();
                         dlg.Close();
                     }),
@@ -218,7 +221,7 @@ namespace Skymu.ViewModels
                     true,
                     new Action(() =>
                     {
-                        Settings.FirstRunCompleted = true;
+                        Settings.AnonymizeOptOutShown = true;
                         Settings.Anonymize = false;
                         Settings.Save();
                         dlg.Close();
@@ -226,11 +229,16 @@ namespace Skymu.ViewModels
                     Universal.Lang["sSKYACCESS_DLG_BTN_YES"]
                 );
                 dlg.ShowDialog();
+            }
 
+            // warn the user once if they're running an old OS like XP / old Wine version
+            if (!Settings.OldPlatformWarningShown)
+            {
                 string message = null;
 
                 if (platform == PlatformType.Unknown)
                     message = brand + " could not determine your operating system. If you are using an unsupported platform, you may encounter bugs.";
+
                 else if (platform < PlatformType.Windows2000)
                 {
                     if (platform == PlatformType.WineLegacy)
@@ -240,30 +248,34 @@ namespace Skymu.ViewModels
                     else if (platform == PlatformType.Wine11)
                         message = brand + " does not have complete support for Wine 11. Some features may not work as expected.";
                 }
+
                 else if (platform < PlatformType.WindowsVista)
                 {
                     if (platform == PlatformType.WindowsXP)
-                        message = brand + " does not officially support Windows XP or the One Core API, and you may encounter significant bugs. However, if you are using Projek01, you should not expect any problems.";
+                        message = brand + " does not officially support Windows XP or the One Core API, and you may encounter " +
+                            "significant bugs. However, if you are using Projek01, you should not expect any problems, and" +
+                            " if you are using EAZY BLACK's official Skymu XP wrapper you should be (mostly) fine.";
                     else if (platform == PlatformType.Windows2000)
                         message = brand + " does not officially support Windows 2000 or any extended kernels, and you may encounter significant bugs.";
                 }
-                else if (platform > PlatformType.Windows11)
-                    message = brand + " has not yet been tested on your version of Windows. You may encounter bugs.";
+
+                // Windows is well known for its backwards compatibility, this should never be an issue.
+                // else if (platform > PlatformType.Windows11) message = brand + " has not yet been tested on your version of Windows. You may encounter bugs.";
 
                 if (message != null)
                     Universal.ShowMessage(message, "Compatibility warning");
             }
 
-            if (!Settings.SuppressOldRuntimeWarnings)
+            if (!Settings.ShowOldDotNetWarnings)
             {
                 string newNetLink = string.Empty;
                 int netVersion = Runtime.DetectNetVersion();
-                if (netVersion < 5) return; // framework or early core (former is to be ignored, latter is impossible)
+                if (netVersion < 5) return; // framework (to be ignored for now) or early core (this is impossible afaik)
                 else if (netVersion < 10)
                 {
-                    newNetLink = "https://dotnet.microsoft.com/en-us/download/dotnet";
-                    // 6 is the last version to reliably support Windows 8.1 and below, so it's the best we can recommend
-                    if (platform < PlatformType.Windows10) newNetLink += "/6.0";
+                    newNetLink = Universal.NET_LATEST_DOWNLOAD_LINK;
+                    // 6 is the last version to reliably support Windows 8.1 and below, so it's the best recommendation
+                    if (platform < PlatformType.Windows10) newNetLink = Universal.NET_SIX_DOWNLOAD_LINK;
 
                 }
                 if (!String.IsNullOrEmpty(newNetLink))
@@ -278,7 +290,7 @@ namespace Skymu.ViewModels
                         null,
                         new Action(() =>
                         {
-                            Settings.SuppressOldRuntimeWarnings = (bool)dlg.CheckBox.IsChecked;
+                            Settings.ShowOldDotNetWarnings = (bool)dlg.CheckBox.IsChecked;
                             Settings.Save();
                             dlg.Close();
                         }),
@@ -286,7 +298,7 @@ namespace Skymu.ViewModels
                         true,
                         new Action(() =>
                         {
-                            Settings.SuppressOldRuntimeWarnings = (bool)dlg.CheckBox.IsChecked;
+                            Settings.ShowOldDotNetWarnings = (bool)dlg.CheckBox.IsChecked;
                             Settings.Save();
                             Process.Start(new ProcessStartInfo
                             {

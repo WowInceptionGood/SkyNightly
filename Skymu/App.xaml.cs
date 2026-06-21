@@ -62,6 +62,8 @@ namespace Skymu
         public const string DISCORD_SERVER_INVITE = "https://skymu.app/discord";
         public const string SKYMU_WEBSITE_HELP = "https://skymu.app/wiki/about";
         public const string SKYMU_WEBSITE_PRIVACY = "https://skymu.app/legal/privacy";
+        public const string NET_LATEST_DOWNLOAD_LINK = "https://dotnet.microsoft.com/en-us/download/dotnet";
+        public const string NET_SIX_DOWNLOAD_LINK = "https://dotnet.microsoft.com/en-us/download/dotnet/6.0";
 
         public static User CurrentUser;
         public static bool IsDarkTheme = false;
@@ -512,7 +514,7 @@ namespace Skymu
             this.DispatcherUnhandledException += App_DispatcherUnhandledException;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
             ApplyPresentationFramework(Settings.PresentationFramework);
-            AutoLaunch.Initialize();
+            AutoLaunch.Get(); // XXX to initialize the setting just in case
             if (!Colorizer.Scan())
                 Universal.ExceptionHandler(
                     new Exception("Could not find any compatible colorways in directory /Colorways.")
