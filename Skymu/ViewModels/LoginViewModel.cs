@@ -279,7 +279,7 @@ allowAutoLogin = !DebugConfig.DisableAutoLogin && !DebugConfig.TestMode;
                 if (netVersion < 5) return; // framework (to be ignored for now) or early core (this is impossible afaik)
                 else if (netVersion < 10)
                 {
-                    newNetLink = Universal.NET_LATEST_DOWNLOAD_LINK;
+                    newNetLink = Universal.NET_DOWNLOAD_LINK;
                     // 6 is the last version to reliably support Windows 8.1 and below, so it's the best recommendation
                     if (platform < PlatformType.Windows10) newNetLink = Universal.NET_SIX_DOWNLOAD_LINK;
 

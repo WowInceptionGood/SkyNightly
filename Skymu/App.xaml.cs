@@ -42,18 +42,23 @@ namespace Skymu
     public partial class Universal : Application
     {
         // Skymu-specific constants. Change if forking.
-        public const string NAME = "Skymu"; 
-        public const string REPOSITORY = NAME;
-        public const string ORGANIZATION = "TheSkymuTeam";
+
+        public const string NAME = "Skymu";
         public const string BUILD_VERSION = "0.4.6";
         public const string BUILD_NAME = "Elder Guardian";
+
+        // Skymu-specific URL constants. Change if forking.
+
+        public const string ORGANIZATION = "TheSkymuTeam";
+        public const string REPOSITORY = NAME;
         public const string DISCORD_SERVER_INVITE = "https://skymu.app/discord";
         public const string SKYMU_WEBSITE_HELP = "https://skymu.app/wiki/about";
         public const string SKYMU_WEBSITE_PRIVACY = "https://skymu.app/legal/privacy";
 
-        // Generic constants. Change if URL changes.
-        public const string NET_LATEST_DOWNLOAD_LINK = "https://dotnet.microsoft.com/en-us/download/dotnet";
-        public const string NET_SIX_DOWNLOAD_LINK = NET_LATEST_DOWNLOAD_LINK + "/6.0";
+        // Generic URL constants. Change if remote location changes.
+
+        public const string NET_DOWNLOAD_LINK = "https://dotnet.microsoft.com/en-us/download/dotnet";
+        public const string NET_SIX_DOWNLOAD_LINK = NET_DOWNLOAD_LINK + "/6.0";
         public const string EASTER_SKYPE_SOUNDS_REMIX = "https://www.youtube.com/watch?v=kVsH_ySm5_E";
         public const string EASTER_CHANTE_SKYPE = "https://www.youtube.com/=watch?v=cdtNIyx10DM";
         public const string GITHUB_BASE_URL = "https://api.github.com/repos/" + ORGANIZATION + "/" + REPOSITORY;
@@ -61,6 +66,7 @@ namespace Skymu
         public const string GITHUB_PULLS_URL = GITHUB_BASE_URL + "/pulls";
 
         // Globally scoped variables.
+
         public static ICore Plugin;
         public static ICall CallPlugin;
         public static ICore[] PluginList;
