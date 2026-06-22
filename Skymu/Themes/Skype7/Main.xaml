@@ -43,112 +43,97 @@
         <!--  only do things here to test a theme in the designer  -->
 
         <!--  vegas pro 13 / theme engine not developed enough, needs bevels to look better  -->
-        <!--<SolidColorBrush x:Key="SkBlue" Color="#5E66D3" />
-        <SolidColorBrush x:Key="SkCustomTint" Color="#778EAF" />
-        <SolidColorBrush x:Key="SkWashedBlue" Color="#AEB5E8" />
-        <SolidColorBrush x:Key="SkMidGray" Color="#26292B" />
-        <SolidColorBrush x:Key="SkLightGraySep" Color="#6F6F6F" />
-        <SolidColorBrush x:Key="SkLightGraySep2" Color="#6F6F6F" />
-        <SolidColorBrush x:Key="SkLight" Color="#7C7C7C" />
-        <SolidColorBrush x:Key="SkLight2" Color="#7C7C7C" />
-        <SolidColorBrush x:Key="SkWhite" Color="#888888" />
-        <SolidColorBrush x:Key="SkWhite2" Color="#888888" />
+        <!--<SolidColorBrush x:Key="Accent" Color="#5E66D3" />
+        <SolidColorBrush x:Key="Accent" Color="#778EAF" />
+        <SolidColorBrush x:Key="Metro.Avatar.Background" Color="#AEB5E8" />
+        <SolidColorBrush x:Key="Metro.Text.MediumContrast" Color="#26292B" />
+        <SolidColorBrush x:Key="Metro.Separator.Tinted" Color="#6F6F6F" />
+        <SolidColorBrush x:Key="Metro.Separator" Color="#6F6F6F" />
+        <SolidColorBrush x:Key="Metro.Background.Tinted" Color="#7C7C7C" />
+        <SolidColorBrush x:Key="Metro.Background.Tinted" Color="#7C7C7C" />
+        <SolidColorBrush x:Key="Card.Background" Color="#888888" />
+        <SolidColorBrush x:Key="Metro.Background" Color="#888888" />
         <SolidColorBrush x:Key="SkDarkBlue" Color="#595959" />
-        <SolidColorBrush x:Key="SkBlack" Color="#000" />
-        <SolidColorBrush x:Key="SkBlack2" Color="#000" />
-        <SolidColorBrush x:Key="SkBubble" Color="#7C7C7C" />
-        <SolidColorBrush x:Key="SkSteelBlue" Color="#26292B" />
-        <SolidColorBrush x:Key="SkBubbleLight" Color="#999999" />-->
+        <SolidColorBrush x:Key="Metro.Text.HighContrast" Color="#000" />
+        <SolidColorBrush x:Key="Metro.Text.VeryHighContrast" Color="#000" />
+        <SolidColorBrush x:Key="Metro.Bubble.Tinted" Color="#7C7C7C" />
+        <SolidColorBrush x:Key="Metro.Text.LowContrast" Color="#26292B" />
+        <SolidColorBrush x:Key="Metro.Bubble" Color="#999999" />-->
 
         <!--  discord 2016 dark mode WIP  -->
-        <!--<SolidColorBrush x:Key="SkBlue" Color="#7289DA" />
-        <SolidColorBrush x:Key="SkCustomTint" Color="#7289DA" />
-        <SolidColorBrush x:Key="SkWashedBlue" Color="#99AAB4" />
-        <SolidColorBrush x:Key="SkMidGray" Color="#8A8E94" />
-        <SolidColorBrush x:Key="SkLightGraySep" Color="#23252A" />
-        <SolidColorBrush x:Key="SkLightGraySep2" Color="#303337" />
-        <SolidColorBrush x:Key="SkLight" Color="#2E3136" />
-        <SolidColorBrush x:Key="SkLight2" Color="#282B30" />
-        <SolidColorBrush x:Key="SkWhite" Color="#36393E" />
-        <SolidColorBrush x:Key="SkWhite2" Color="#36393E" />
+        <!--<SolidColorBrush x:Key="Accent" Color="#7289DA" />
+        <SolidColorBrush x:Key="Accent" Color="#7289DA" />
+        <SolidColorBrush x:Key="Metro.Avatar.Background" Color="#99AAB4" />
+        <SolidColorBrush x:Key="Metro.Text.MediumContrast" Color="#8A8E94" />
+        <SolidColorBrush x:Key="Metro.Separator.Tinted" Color="#23252A" />
+        <SolidColorBrush x:Key="Metro.Separator" Color="#303337" />
+        <SolidColorBrush x:Key="Metro.Background.Tinted" Color="#2E3136" />
+        <SolidColorBrush x:Key="Metro.Background.Tinted" Color="#282B30" />
+        <SolidColorBrush x:Key="Card.Background" Color="#36393E" />
+        <SolidColorBrush x:Key="Metro.Background" Color="#36393E" />
         <SolidColorBrush x:Key="SkDarkBlue" Color="#0095CC" />
-        <SolidColorBrush x:Key="SkBlack" Color="#C3C4C5" />
-        <SolidColorBrush x:Key="SkBlack2" Color="#DCDDDE" />
-        <SolidColorBrush x:Key="SkBubble" Color="#08C7EDFC" />
-        <SolidColorBrush x:Key="SkBubbleLight" Color="#08E5F7FD" />
-        <SolidColorBrush x:Key="SkSteelBlue" Color="#9A9BA2" />-->
+        <SolidColorBrush x:Key="Metro.Text.HighContrast" Color="#C3C4C5" />
+        <SolidColorBrush x:Key="Metro.Text.VeryHighContrast" Color="#DCDDDE" />
+        <SolidColorBrush x:Key="Metro.Bubble.Tinted" Color="#08C7EDFC" />
+        <SolidColorBrush x:Key="Metro.Bubble" Color="#08E5F7FD" />
+        <SolidColorBrush x:Key="Metro.Text.LowContrast" Color="#9A9BA2" />-->
 
         <!--  uwp skype dark mode WIP  -->
-        <!--<SolidColorBrush x:Key="SkBlue" Color="#00AFF0" />
-        <SolidColorBrush x:Key="SkCustomTint" Color="#18B6F1" />
-        <SolidColorBrush x:Key="SkWashedBlue" Color="#84D9F8" />
-        <SolidColorBrush x:Key="SkMidGray" Color="#899299" />
-        <SolidColorBrush x:Key="SkLightGraySep" Color="#00AFF0" />
-        <SolidColorBrush x:Key="SkLightGraySep2" Color="#002D3E" />
-        <SolidColorBrush x:Key="SkLight" Color="#021420" />
-        <SolidColorBrush x:Key="SkLight2" Color="#021420" />
-        <SolidColorBrush x:Key="SkWhite" Color="#000000" />
-        <SolidColorBrush x:Key="SkWhite2" Color="#021728" />
+        <!--<SolidColorBrush x:Key="Accent" Color="#00AFF0" />
+        <SolidColorBrush x:Key="Accent" Color="#18B6F1" />
+        <SolidColorBrush x:Key="Metro.Avatar.Background" Color="#84D9F8" />
+        <SolidColorBrush x:Key="Metro.Text.MediumContrast" Color="#899299" />
+        <SolidColorBrush x:Key="Metro.Separator.Tinted" Color="#00AFF0" />
+        <SolidColorBrush x:Key="Metro.Separator" Color="#002D3E" />
+        <SolidColorBrush x:Key="Metro.Background.Tinted" Color="#021420" />
+        <SolidColorBrush x:Key="Metro.Background.Tinted" Color="#021420" />
+        <SolidColorBrush x:Key="Card.Background" Color="#000000" />
+        <SolidColorBrush x:Key="Metro.Background" Color="#021728" />
         <SolidColorBrush x:Key="SkDarkBlue" Color="#00AFF0" />
-        <SolidColorBrush x:Key="SkBlack" Color="#FFFFFF" />
-        <SolidColorBrush x:Key="SkBlack2" Color="#fff" />
-        <SolidColorBrush x:Key="SkBubble" Color="#2C2B31" />
-        <SolidColorBrush x:Key="SkBubbleLight" Color="#021420" />
-        <SolidColorBrush x:Key="SkSteelBlue" Color="#899299" />-->
+        <SolidColorBrush x:Key="Metro.Text.HighContrast" Color="#FFFFFF" />
+        <SolidColorBrush x:Key="Metro.Text.VeryHighContrast" Color="#fff" />
+        <SolidColorBrush x:Key="Metro.Bubble.Tinted" Color="#2C2B31" />
+        <SolidColorBrush x:Key="Metro.Bubble" Color="#021420" />
+        <SolidColorBrush x:Key="Metro.Text.LowContrast" Color="#899299" />-->
 
         <!--  telegram dark mode  -->
-        <!--<SolidColorBrush x:Key="SkBlue" Color="#6C7883" />
-        <SolidColorBrush x:Key="SkCustomTint" Color="#6C7883" />
-        <SolidColorBrush x:Key="SkWashedBlue" Color="#5BAEF9" />
-        <SolidColorBrush x:Key="SkMidGray" Color="#3FFFFFFF" />
-        <SolidColorBrush x:Key="SkLightGraySep" Color="#101921" />
-        <SolidColorBrush x:Key="SkLightGraySep2" Color="#0A121B" />
-        <SolidColorBrush x:Key="SkLight" Color="#17212B" />
-        <SolidColorBrush x:Key="SkLight2" Color="#17212B" />
-        <SolidColorBrush x:Key="SkWhite" Color="#0E1621" />
-        <SolidColorBrush x:Key="SkWhite2" Color="#17212B" />
+        <!--<SolidColorBrush x:Key="Accent" Color="#6C7883" />
+        <SolidColorBrush x:Key="Accent" Color="#6C7883" />
+        <SolidColorBrush x:Key="Metro.Avatar.Background" Color="#5BAEF9" />
+        <SolidColorBrush x:Key="Metro.Text.MediumContrast" Color="#3FFFFFFF" />
+        <SolidColorBrush x:Key="Metro.Separator.Tinted" Color="#101921" />
+        <SolidColorBrush x:Key="Metro.Separator" Color="#0A121B" />
+        <SolidColorBrush x:Key="Metro.Background.Tinted" Color="#17212B" />
+        <SolidColorBrush x:Key="Metro.Background.Tinted" Color="#17212B" />
+        <SolidColorBrush x:Key="Card.Background" Color="#0E1621" />
+        <SolidColorBrush x:Key="Metro.Background" Color="#17212B" />
         <SolidColorBrush x:Key="SkDarkBlue" Color="#0095CC" />
-        <SolidColorBrush x:Key="SkBlack" Color="#FFFFFF" />
-        <SolidColorBrush x:Key="SkBlack2" Color="#F5F5F5" />
-        <SolidColorBrush x:Key="SkBubble" Color="#182533" />
-        <SolidColorBrush x:Key="SkSteelBlue" Color="#3FFFFFFF" />
-        <SolidColorBrush x:Key="SkBubbleLight" Color="#2B5278" />-->
+        <SolidColorBrush x:Key="Metro.Text.HighContrast" Color="#FFFFFF" />
+        <SolidColorBrush x:Key="Metro.Text.VeryHighContrast" Color="#F5F5F5" />
+        <SolidColorBrush x:Key="Metro.Bubble.Tinted" Color="#182533" />
+        <SolidColorBrush x:Key="Metro.Text.LowContrast" Color="#3FFFFFFF" />
+        <SolidColorBrush x:Key="Metro.Bubble" Color="#2B5278" />-->
 
         <!--  skype late-2015 default  -->
-        <!--<SolidColorBrush x:Key="SkBlue" Color="#00AFF0" />
-        <SolidColorBrush x:Key="SkCustomTint" Color="#00AFF0" />
-        <SolidColorBrush x:Key="SkWashedBlue" Color="#ABD4E3" />
-        <SolidColorBrush x:Key="SkMidGray" Color="#6E6E73" />
-        <SolidColorBrush x:Key="SkLightGraySep" Color="#D3E6EA" />
-        <SolidColorBrush x:Key="SkLightGraySep2" Color="#E4ECEF" />
-        <SolidColorBrush x:Key="SkLight" Color="#F5FCFE" />
-        <SolidColorBrush x:Key="SkLight2" Color="#F5FCFE" />
-        <SolidColorBrush x:Key="SkWhite" Color="#FFFFFF" />
-        <SolidColorBrush x:Key="SkWhite2" Color="#FFFFFF" />
+        <!--<SolidColorBrush x:Key="Accent" Color="#00AFF0" />
+        <SolidColorBrush x:Key="Accent" Color="#00AFF0" />
+        <SolidColorBrush x:Key="Metro.Avatar.Background" Color="#ABD4E3" />
+        <SolidColorBrush x:Key="Metro.Text.MediumContrast" Color="#6E6E73" />
+        <SolidColorBrush x:Key="Metro.Separator.Tinted" Color="#D3E6EA" />
+        <SolidColorBrush x:Key="Metro.Separator" Color="#E4ECEF" />
+        <SolidColorBrush x:Key="Metro.Background.Tinted" Color="#F5FCFE" />
+        <SolidColorBrush x:Key="Metro.Background.Tinted" Color="#F5FCFE" />
+        <SolidColorBrush x:Key="Card.Background" Color="#FFFFFF" />
+        <SolidColorBrush x:Key="Metro.Background" Color="#FFFFFF" />
         <SolidColorBrush x:Key="SkDarkBlue" Color="#0095CC" />
-        <SolidColorBrush x:Key="SkBlack" Color="#2B2B30" />
-        <SolidColorBrush x:Key="SkBlack2" Color="#2B2B30" />
-        <SolidColorBrush x:Key="SkBubble" Color="#C7EDFC" />
-        <SolidColorBrush x:Key="SkSteelBlue" Color="#A0B7C8" />
-        <SolidColorBrush x:Key="SkBubbleLight" Color="#E5F7FD" />-->
+        <SolidColorBrush x:Key="Metro.Text.HighContrast" Color="#2B2B30" />
+        <SolidColorBrush x:Key="Metro.Text.VeryHighContrast" Color="#2B2B30" />
+        <SolidColorBrush x:Key="Metro.Bubble.Tinted" Color="#C7EDFC" />
+        <SolidColorBrush x:Key="Metro.Text.LowContrast" Color="#A0B7C8" />
+        <SolidColorBrush x:Key="Metro.Bubble" Color="#E5F7FD" />-->
 
         <!--  mapped to Skymu's standard theme format  -->
-        <SolidColorBrush x:Key="SkBlue" Color="{Binding Color, Source={StaticResource Accent}}" />
-        <SolidColorBrush x:Key="SkCustomTint" Color="{Binding Color, Source={StaticResource Accent}}" />
-        <SolidColorBrush x:Key="SkWashedBlue" Color="{Binding Color, Source={StaticResource Metro.Avatar.Background}}" />
-        <SolidColorBrush x:Key="SkMidGray" Color="{Binding Color, Source={StaticResource Metro.Text.MediumContrast}}" />
-        <SolidColorBrush x:Key="SkLightGraySep" Color="{Binding Color, Source={StaticResource Metro.Separator.Tinted}}" />
-        <SolidColorBrush x:Key="SkLightGraySep2" Color="{Binding Color, Source={StaticResource Metro.Separator}}" />
-        <SolidColorBrush x:Key="SkLight" Color="{Binding Color, Source={StaticResource Metro.Background.Tinted}}" />
-        <SolidColorBrush x:Key="SkLight2" Color="{Binding Color, Source={StaticResource Metro.Background.Tinted}}" />
-        <SolidColorBrush x:Key="SkWhite" Color="{Binding Color, Source={StaticResource Card.Background}}" />
-        <SolidColorBrush x:Key="SkWhite2" Color="{Binding Color, Source={StaticResource Metro.Background}}" />
         <SolidColorBrush x:Key="SkDarkBlue" Color="{Binding Color, Source={StaticResource Accent}}" />
-        <SolidColorBrush x:Key="SkBlack" Color="{Binding Color, Source={StaticResource Metro.Text.HighContrast}}" />
-        <SolidColorBrush x:Key="SkBlack2" Color="{Binding Color, Source={StaticResource Metro.Text.VeryHighContrast}}" />
-        <SolidColorBrush x:Key="SkSteelBlue" Color="{Binding Color, Source={StaticResource Metro.Text.LowContrast}}" />
-        <SolidColorBrush x:Key="SkBubble" Color="{Binding Color, Source={StaticResource Metro.Bubble.Tinted}}" />
-        <SolidColorBrush x:Key="SkBubbleLight" Color="{Binding Color, Source={StaticResource Metro.Bubble}}" />
 
         <Style x:Key="TextBlockViewerStyle" TargetType="TextBlock">
             <Setter Property="HorizontalAlignment" Value="Left" />
@@ -254,12 +239,12 @@
                     </DrawingGroup.Transform>
                     <DrawingGroup Opacity="1">
                         <DrawingGroup Opacity="1">
-                            <GeometryDrawing Brush="{DynamicResource SkLight}" Geometry="F1 M1121,19z M0,0z M1119.25,18.15L1119.25,-0.6 -1.5,-0.6 -1.5,18.15 528.55,18.15 533.85,17Q536.65,16.15 539.8,14.5 540.65,14.05 541.5,13.55 542.65,12.9 543.8,12.3L543.85,12.3Q546,10.85 547.75,9.45 550.5,7.3 552.15,5.15 555.35,1 558,1.2 560.05,1.35 561.05,1.85 562,2.35 565.05,5.4 567,7.35 569.55,9.45 570.95,10.6 572.5,11.9 572.75,12.1 573.1,12.3 574.8,13.45 576.5,14.5 578.8,15.8 581,16.6 584.9107421875,18.08515625 587.4,18.15L1119.25,18.15z" />
+                            <GeometryDrawing Brush="{DynamicResource Metro.Background.Tinted}" Geometry="F1 M1121,19z M0,0z M1119.25,18.15L1119.25,-0.6 -1.5,-0.6 -1.5,18.15 528.55,18.15 533.85,17Q536.65,16.15 539.8,14.5 540.65,14.05 541.5,13.55 542.65,12.9 543.8,12.3L543.85,12.3Q546,10.85 547.75,9.45 550.5,7.3 552.15,5.15 555.35,1 558,1.2 560.05,1.35 561.05,1.85 562,2.35 565.05,5.4 567,7.35 569.55,9.45 570.95,10.6 572.5,11.9 572.75,12.1 573.1,12.3 574.8,13.45 576.5,14.5 578.8,15.8 581,16.6 584.9107421875,18.08515625 587.4,18.15L1119.25,18.15z" />
                         </DrawingGroup>
                         <GeometryDrawing Geometry="F1 M1121,19z M0,0z M-1.5,18.15L528.55,18.15 533.85,17Q536.65,16.15 539.8,14.5 540.65,14.05 541.5,13.55 542.65,12.9 543.8,12.3L543.85,12.3Q546,10.85 547.75,9.45 550.5,7.3 552.15,5.15 555.35,1 558,1.2 560.05,1.35 561.05,1.85 562,2.35 565.05,5.4 567,7.35 569.55,9.45 570.95,10.6 572.5,11.9 572.75,12.1 573.1,12.3 574.8,13.45 576.5,14.5 578.8,15.8 581,16.6 584.9107421875,18.08515625 587.4,18.15L1119.25,18.15 M-1.9,18.15L-1.5,18.15">
                             <GeometryDrawing.Pen>
                                 <Pen
-                                    Brush="{DynamicResource SkLightGraySep}"
+                                    Brush="{DynamicResource Metro.Separator.Tinted}"
                                     EndLineCap="Round"
                                     LineJoin="Miter"
                                     MiterLimit="2"
@@ -277,7 +262,7 @@
                 <DrawingGroup ClipGeometry="M0,0 V76 H23 V0 H0 Z">
                     <DrawingGroup Opacity="1" Transform="4.5999755859375,0,0,4.5999755859375,4.55,1">
                         <DrawingGroup Opacity="1">
-                            <GeometryDrawing Brush="{DynamicResource SkBubble}" Geometry="F1 M23,76z M0,0z M4,0.25Q3.9328125,3.221875,1.85,5.45L0.85,6.35Q0.25,6.9,0.05,7.4L0,8 0.05,8.65Q0.25,9.15,0.85,9.7L1.85,10.6Q3.9328125,12.828125,4,15.8L4,0.25z" />
+                            <GeometryDrawing Brush="{DynamicResource Metro.Bubble.Tinted}" Geometry="F1 M23,76z M0,0z M4,0.25Q3.9328125,3.221875,1.85,5.45L0.85,6.35Q0.25,6.9,0.05,7.4L0,8 0.05,8.65Q0.25,9.15,0.85,9.7L1.85,10.6Q3.9328125,12.828125,4,15.8L4,0.25z" />
                         </DrawingGroup>
                     </DrawingGroup>
                 </DrawingGroup>
@@ -289,7 +274,7 @@
                 <DrawingGroup ClipGeometry="M0,0 V76 H23 V0 H0 Z">
                     <DrawingGroup Opacity="1" Transform="4.5999755859375,0,0,4.5999755859375,0,1">
                         <DrawingGroup Opacity="1">
-                            <GeometryDrawing Brush="{DynamicResource SkBubbleLight}" Geometry="F1 M23,76z M0,0z M2.1,5.45Q0.065625,3.2703125,0,0.25L0,15.8Q0.065625,12.7796875,2.1,10.6L3.1,9.7Q3.7,9.15,3.9,8.65L4,8 3.9,7.4Q3.7,6.9,3.1,6.35L2.1,5.45z" />
+                            <GeometryDrawing Brush="{DynamicResource Metro.Bubble}" Geometry="F1 M23,76z M0,0z M2.1,5.45Q0.065625,3.2703125,0,0.25L0,15.8Q0.065625,12.7796875,2.1,10.6L3.1,9.7Q3.7,9.15,3.9,8.65L4,8 3.9,7.4Q3.7,6.9,3.1,6.35L2.1,5.45z" />
                         </DrawingGroup>
                     </DrawingGroup>
                 </DrawingGroup>
@@ -463,7 +448,7 @@
                     <Ellipse.Fill>
                         <VisualBrush>
                             <VisualBrush.Visual>
-                                <Grid Background="{DynamicResource SkWashedBlue}">
+                                <Grid Background="{DynamicResource Metro.Avatar.Background}">
                                     <Image RenderOptions.BitmapScalingMode="HighQuality" Stretch="UniformToFill">
                                         <Image.Source>
                                             <MultiBinding Converter="{StaticResource ByteArrayToImage}">
@@ -486,7 +471,7 @@
                     Content="{Binding Partner.DisplayName}"
                     FontFamily="Segoe UI Historic"
                     FontSize="13"
-                    Foreground="{DynamicResource SkBlack}">
+                    Foreground="{DynamicResource Metro.Text.HighContrast}">
                     <Label.LayoutTransform>
                         <ScaleTransform ScaleX="1.0" />
                     </Label.LayoutTransform>
@@ -509,7 +494,7 @@
                     <Ellipse.Fill>
                         <VisualBrush>
                             <VisualBrush.Visual>
-                                <Grid Background="{DynamicResource SkWashedBlue}">
+                                <Grid Background="{DynamicResource Metro.Avatar.Background}">
                                     <Image RenderOptions.BitmapScalingMode="HighQuality" Stretch="UniformToFill">
                                         <Image.Source>
                                             <MultiBinding Converter="{StaticResource ByteArrayToImage}">
@@ -532,7 +517,7 @@
                     Content="{Binding DisplayName}"
                     FontFamily="Segoe UI Historic"
                     FontSize="13"
-                    Foreground="{DynamicResource SkBlack}" />
+                    Foreground="{DynamicResource Metro.Text.HighContrast}" />
             </Grid>
         </DataTemplate>
 
@@ -555,7 +540,7 @@
                         <Ellipse.Fill>
                             <VisualBrush>
                                 <VisualBrush.Visual>
-                                    <Grid Background="{DynamicResource SkWashedBlue}">
+                                    <Grid Background="{DynamicResource Metro.Avatar.Background}">
                                         <Image RenderOptions.BitmapScalingMode="HighQuality" Stretch="UniformToFill">
                                             <Image.Source>
                                                 <MultiBinding Converter="{StaticResource ByteArrayToImage}">
@@ -575,7 +560,7 @@
                             Margin="18,0,0,2"
                             FontFamily="Segoe UI Historic"
                             FontSize="11"
-                            Foreground="{DynamicResource SkSteelBlue}"
+                            Foreground="{DynamicResource Metro.Text.LowContrast}"
                             Text="{Binding Author.DisplayName}"
                             Visibility="{Binding ShowSenderName, Converter={StaticResource BoolToVis}}" />
                         <StackPanel Orientation="Horizontal">
@@ -591,7 +576,7 @@
                             <Border
                                 MaxWidth="415"
                                 Padding="17,9,17,6"
-                                Background="{DynamicResource SkBubble}"
+                                Background="{DynamicResource Metro.Bubble.Tinted}"
                                 CornerRadius="4.5"
                                 Visibility="{Binding IsImageGroup, Converter={StaticResource BoolToInverseVis}}">
                                 <ItemsControl ItemsSource="{Binding Messages}">
@@ -606,7 +591,7 @@
                                                 Margin="-1,0,0,3"
                                                 FontFamily="Segoe UI Historic"
                                                 FontSize="13"
-                                                Foreground="{DynamicResource SkBlack2}"
+                                                Foreground="{DynamicResource Metro.Text.VeryHighContrast}"
                                                 LineHeight="22"
                                                 Text="{Binding Text}"
                                                 TextWrapping="Wrap" />
@@ -653,7 +638,7 @@
                     <Border
                         MaxWidth="415"
                         Padding="17,9,17,6"
-                        Background="{DynamicResource SkBubbleLight}"
+                        Background="{DynamicResource Metro.Bubble}"
                         CornerRadius="4.5"
                         Visibility="{Binding IsImageGroup, Converter={StaticResource BoolToInverseVis}}">
                         <ItemsControl ItemsSource="{Binding Messages}">
@@ -668,7 +653,7 @@
                                         Margin="-1,0,0,3"
                                         FontFamily="Segoe UI Historic"
                                         FontSize="13"
-                                        Foreground="{DynamicResource SkBlack2}"
+                                        Foreground="{DynamicResource Metro.Text.VeryHighContrast}"
                                         LineHeight="22"
                                         Text="{Binding Text}"
                                         TextWrapping="Wrap" />
@@ -693,7 +678,7 @@
                     VerticalAlignment="Top"
                     FontFamily="Segoe UI Historic"
                     FontSize="11"
-                    Foreground="{DynamicResource SkSteelBlue}"
+                    Foreground="{DynamicResource Metro.Text.LowContrast}"
                     Text="{Binding Time, StringFormat=HH:mm}" />
             </Grid>
         </DataTemplate>
@@ -713,7 +698,7 @@
                     <Ellipse.Fill>
                         <VisualBrush>
                             <VisualBrush.Visual>
-                                <Grid Background="{DynamicResource SkWashedBlue}">
+                                <Grid Background="{DynamicResource Metro.Avatar.Background}">
                                     <Image RenderOptions.BitmapScalingMode="HighQuality" Stretch="UniformToFill">
                                         <Image.Source>
                                             <MultiBinding Converter="{StaticResource ByteArrayToImage}">
@@ -736,7 +721,7 @@
                     Content="{Binding DisplayName}"
                     FontFamily="Segoe UI Historic"
                     FontSize="13"
-                    Foreground="{DynamicResource SkBlack}" />
+                    Foreground="{DynamicResource Metro.Text.HighContrast}" />
             </Grid>
         </DataTemplate>
 
@@ -751,7 +736,7 @@
                     VerticalAlignment="Center"
                     FontFamily="Segoe UI Historic"
                     FontSize="12"
-                    Foreground="{DynamicResource SkBlack}"
+                    Foreground="{DynamicResource Metro.Text.HighContrast}"
                     Text="{Binding DisplayName}"
                     TextTrimming="CharacterEllipsis" />
             </Grid>
@@ -779,10 +764,10 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsSelected" Value="True">
-                                <Setter TargetName="ItemBorder" Property="Background" Value="{DynamicResource SkWashedBlue}" />
+                                <Setter TargetName="ItemBorder" Property="Background" Value="{DynamicResource Metro.Avatar.Background}" />
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="ItemBorder" Property="Background" Value="{DynamicResource SkLightGraySep2}" />
+                                <Setter TargetName="ItemBorder" Property="Background" Value="{DynamicResource Metro.Separator}" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -807,7 +792,7 @@
             <Grid
                 x:Name="SidebarGrid"
                 MinWidth="240"
-                Background="{DynamicResource SkLight}"
+                Background="{DynamicResource Metro.Background.Tinted}"
                 ClipToBounds="True">
 
                 <!--  Header area (height 110)  -->
@@ -815,7 +800,7 @@
                     Width="auto"
                     Height="110"
                     VerticalAlignment="Top"
-                    Background="{DynamicResource SkLight2}">
+                    Background="{DynamicResource Metro.Background.Tinted}">
                     <Image
                         x:Name="UserHousing"
                         Width="130"
@@ -859,7 +844,7 @@
                         <Ellipse.Fill>
                             <VisualBrush>
                                 <VisualBrush.Visual>
-                                    <Grid Background="{DynamicResource SkWashedBlue}">
+                                    <Grid Background="{DynamicResource Metro.Avatar.Background}">
                                         <Image
                                             x:Name="UserPicture"
                                             RenderOptions.BitmapScalingMode="HighQuality"
@@ -879,7 +864,7 @@
                         VerticalAlignment="Top"
                         FontFamily="Segoe UI Historic"
                         FontSize="13"
-                        Foreground="{DynamicResource SkBlack}"
+                        Foreground="{DynamicResource Metro.Text.HighContrast}"
                         Text="Saul Goodman"
                         TextTrimming="CharacterEllipsis">
                         <TextBlock.LayoutTransform>
@@ -891,7 +876,7 @@
                         Margin="70,47,20,47"
                         FontFamily="Segoe UI Historic"
                         FontSize="11"
-                        Foreground="{DynamicResource SkMidGray}"
+                        Foreground="{DynamicResource Metro.Text.MediumContrast}"
                         Text=""
                         TextTrimming="CharacterEllipsis"
                         TextWrapping="Wrap">
@@ -907,7 +892,7 @@
                         VerticalAlignment="Bottom"
                         FontFamily="Segoe UI Historic"
                         FontSize="9"
-                        Foreground="{DynamicResource SkMidGray}" />
+                        Foreground="{DynamicResource Metro.Text.MediumContrast}" />
                     <TextBox
                         x:Name="TextBoxSearch"
                         Margin="38.15,81,34,0"
@@ -919,7 +904,7 @@
                         BorderThickness="0"
                         FontFamily="Segoe UI Historic"
                         FontSize="13"
-                        Foreground="{DynamicResource SkMidGray}"
+                        Foreground="{DynamicResource Metro.Text.MediumContrast}"
                         Text="{Binding Source={StaticResource Lang}, Path=[sADD_CONTACT_PANEL_SEARCH_HINT], Mode=OneWay}"
                         TextChanged="TextBoxSearch_TextChanged">
                         <!--  TODO: Use LANG for above  -->
@@ -938,8 +923,8 @@
                     Height="1"
                     Margin="15,110,15,0"
                     VerticalAlignment="Top"
-                    Fill="{DynamicResource SkLightGraySep}"
-                    Stroke="{DynamicResource SkLightGraySep}" />
+                    Fill="{DynamicResource Metro.Separator.Tinted}"
+                    Stroke="{DynamicResource Metro.Separator.Tinted}" />
 
                 <!--  CONTACTS / RECENT / SERVERS tab bar  -->
                 <Grid
@@ -973,7 +958,7 @@
                         VerticalAlignment="Top"
                         Cursor="Hand"
                         FontFamily="Segoe UI Historic"
-                        Foreground="{DynamicResource SkBlack}"
+                        Foreground="{DynamicResource Metro.Text.HighContrast}"
                         MouseLeftButtonUp="TabContacts_Click"
                         Text="{Binding [sZAPBUTTON_CONTACTS], Source='{StaticResource Lang}', Converter={StaticResource ToUpperConverter}}"
                         TextAlignment="Left"
@@ -1008,7 +993,7 @@
                         VerticalAlignment="Top"
                         Cursor="Hand"
                         FontFamily="Segoe UI Historic"
-                        Foreground="{DynamicResource SkBlack}"
+                        Foreground="{DynamicResource Metro.Text.HighContrast}"
                         MouseLeftButtonUp="TabServers_Click"
                         Text="SERVERS"
                         TextAlignment="Left"
@@ -1062,7 +1047,7 @@
             Margin="-5,-2.5,0,-2.5"
             HorizontalAlignment="Center"
             Panel.ZIndex="2"
-            Background="{DynamicResource SkLightGraySep2}"
+            Background="{DynamicResource Metro.Separator}"
             BorderBrush="Transparent"
             BorderThickness="2.5"
             ResizeBehavior="PreviousAndNext"
@@ -1085,14 +1070,14 @@
             <Border
                 VerticalAlignment="Top"
                 Panel.ZIndex="2"
-                Background="{DynamicResource SkLight}"
-                BorderBrush="{DynamicResource SkLightGraySep2}"
+                Background="{DynamicResource Metro.Background.Tinted}"
+                BorderBrush="{DynamicResource Metro.Separator}"
                 BorderThickness="0,0,0,1">
                 <Grid
                     Width="auto"
                     Height="100"
                     VerticalAlignment="Top"
-                    Background="{DynamicResource SkWhite2}">
+                    Background="{DynamicResource Metro.Background}">
                     <Ellipse
                         Width="60"
                         Height="60"
@@ -1102,7 +1087,7 @@
                         <Ellipse.Fill>
                             <VisualBrush>
                                 <VisualBrush.Visual>
-                                    <Grid Background="{DynamicResource SkWashedBlue}">
+                                    <Grid Background="{DynamicResource Metro.Avatar.Background}">
                                         <Image
                                             x:Name="ChatHeaderAvatar"
                                             RenderOptions.BitmapScalingMode="HighQuality"
@@ -1123,7 +1108,7 @@
                         Content=""
                         FontSize="21"
                         FontWeight="UltraLight"
-                        Foreground="{DynamicResource SkBlack}">
+                        Foreground="{DynamicResource Metro.Text.HighContrast}">
                         <Label.LayoutTransform>
                             <ScaleTransform ScaleX="1.05" />
                         </Label.LayoutTransform>
@@ -1133,7 +1118,7 @@
                         Margin="104,47,305,37"
                         FontFamily="Segoe UI Historic"
                         FontSize="11"
-                        Foreground="{DynamicResource SkMidGray}"
+                        Foreground="{DynamicResource Metro.Text.MediumContrast}"
                         Text=""
                         TextTrimming="CharacterEllipsis"
                         TextWrapping="Wrap">
@@ -1259,7 +1244,7 @@
             <ScrollViewer
                 x:Name="MessageScrollFeed"
                 Margin="0,101,0,130"
-                Background="{StaticResource SkWhite}"
+                Background="{StaticResource Card.Background}"
                 Loaded="MessageScrollFeed_Loaded">
                 <ItemsControl
                     x:Name="ConversationItemsList"
@@ -1278,7 +1263,7 @@
                 Width="auto"
                 Height="130"
                 VerticalAlignment="Bottom"
-                Background="{DynamicResource SkWhite2}">
+                Background="{DynamicResource Metro.Background}">
                 <StackPanel
                     x:Name="TypingIndicator"
                     Height="16"
@@ -1293,7 +1278,7 @@
                         FontFamily="Segoe UI Historic"
                         FontSize="10"
                         FontStyle="Italic"
-                        Foreground="{DynamicResource SkMidGray}" />
+                        Foreground="{DynamicResource Metro.Text.MediumContrast}" />
                 </StackPanel>
                 <Image
                     x:Name="EmojiButton"
@@ -1365,7 +1350,7 @@
                     FontFamily="Segoe UI Historic"
                     FontSize="13"
                     FontStretch="Normal"
-                    Foreground="{DynamicResource SkBlack}"
+                    Foreground="{DynamicResource Metro.Text.HighContrast}"
                     KeyDown="TextBoxMessage_KeyDown" />
             </Grid>
 
