@@ -7,7 +7,7 @@
 // If you do not wish to abide by those terms, you may not
 // modify or distribute any original code from the project.
 /*==========================================================*/
-// License: https://skymu.app/legal/AGPLv3
+// License: https://skymu.app/legal/license
 // SPDX-License-Identifier: AGPL-3.0-or-later
 /*==========================================================*/
 
@@ -88,7 +88,7 @@ namespace Fluxer
         private const int WARNING_WS_MS = 5000;
         private const int DM_CHANNEL_TYPE = 1;
         private const int GROUP_CHANNEL_TYPE = 3;
-        internal const int API_VERSION = 9;
+        internal const int API_VERSION = 1;
 
         // String constants
         private const string USERS_ME = "users/@me";

@@ -7,7 +7,7 @@
 // If you do not wish to abide by those terms, you may not
 // modify or distribute any original code from the project.
 /*==========================================================*/
-// License: https://skymu.app/legal/AGPLv3
+// License: https://skymu.app/legal/license
 // SPDX-License-Identifier: AGPL-3.0-or-later
 /*==========================================================*/
 
@@ -108,21 +108,8 @@ namespace Fluxer.Networking
                     token = token,
                     properties = new
                     {
-                        os = config.OperatingSystem,
-                        browser = config.BrowserName,
-                        device = string.Empty,
-                        system_locale = config.SystemLocale,
-                        has_client_mods = config.HasClientMods,
                         browser_user_agent = config.BrowserUA,
                         browser_version = config.BrowserVer,
-                        os_version = config.OSVersion,
-                        referrer = config.DCReferrer,
-                        referring_domain = config.DCReferringDomain,
-                        referrer_current = config.DCReferringCurrent,
-                        referring_domain_current = config.DCReferringCurrentDomain,
-                        release_channel = config.DCClientState,
-                        client_event_source = config.DCClientEvtSrc,
-                        client_launch_id = config.ClientLaunchId,
                         is_fast_connect = true
                     }
                 },

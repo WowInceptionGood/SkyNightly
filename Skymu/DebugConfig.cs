@@ -7,7 +7,7 @@
 // If you do not wish to abide by those terms, you may not
 // modify or distribute any original code from the project.
 /*==========================================================*/
-// License: https://skymu.app/legal/AGPLv3
+// License: https://skymu.app/legal/license
 // SPDX-License-Identifier: AGPL-3.0-or-later
 /*==========================================================*/
 
@@ -16,7 +16,7 @@ namespace Skymu
     internal class DebugConfig
     {
         internal static bool TestMode = false; // disables plugin login, signs you directly into stub
-        internal static bool DisableAutoLogin = false; // disables plugin auto login for testing
+        internal static bool DisableAutoLogin = true; // disables plugin auto login for testing
         internal static bool LocalizeDesigner = false; // localize the XAML designer
     }
 }

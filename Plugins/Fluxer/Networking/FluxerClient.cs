@@ -7,7 +7,7 @@
 // If you do not wish to abide by those terms, you may not
 // modify or distribute any original code from the project.
 /*==========================================================*/
-// License: https://skymu.app/legal/AGPLv3
+// License: https://skymu.app/legal/license
 // SPDX-License-Identifier: AGPL-3.0-or-later
 /*==========================================================*/
 
@@ -53,14 +53,11 @@ namespace Fluxer.Networking
             InternalHttpClient.DefaultRequestHeaders.Add("Accept", "*/*");
             InternalHttpClient.DefaultRequestHeaders.Add("User-Agent", UserAgent);
             InternalHttpClient.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate"); // TODO maybe add brotli decompression? that's supposed to be better
-
-            XSuperProperties = ConfigManager.GetXSPJson();
-            InternalHttpClient.DefaultRequestHeaders.Add("X-Super-Properties", XSuperProperties);
         }
 
         public async Task<string> Send(string endpoint, HttpMethod httpMethod, string token = null, object data = null, byte[] fileData = null, string fileName = null, Dictionary<string, string> headers = null, CancellationToken ctoken = default)
         {
-            string url = "https://fluxer.com/api/v" + Core.API_VERSION + "/" + endpoint.TrimStart('/');
+            string url = "https://api.fluxer.app/v" + Core.API_VERSION + "/" + endpoint.TrimStart('/');
             // Debug.WriteLine(url);
             using (var request = new HttpRequestMessage(httpMethod, url))
             {

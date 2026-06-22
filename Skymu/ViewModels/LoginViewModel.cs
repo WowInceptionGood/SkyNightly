@@ -7,7 +7,7 @@
 // If you do not wish to abide by those terms, you may not
 // modify or distribute any original code from the project.
 /*==========================================================*/
-// License: https://skymu.app/legal/AGPLv3
+// License: https://skymu.app/legal/license
 // SPDX-License-Identifier: AGPL-3.0-or-later
 /*==========================================================*/
 // This code is EXPIREMENTAL and has not been reviewed by
@@ -71,9 +71,7 @@ namespace Skymu.ViewModels
 
         bool allowAutoLogin = true;
 
-#if DEBUG
-allowAutoLogin = !DebugConfig.DisableAutoLogin && !DebugConfig.TestMode;
-#endif
+
 
         public LoginViewModel(Func<IMainWindowHolder> createMainWindow)
         {
@@ -91,6 +89,7 @@ allowAutoLogin = !DebugConfig.DisableAutoLogin && !DebugConfig.TestMode;
             foreach (var plugin in Universal.PluginList)
             {
 #if DEBUG
+                allowAutoLogin = !DebugConfig.DisableAutoLogin && !DebugConfig.TestMode;
                 if (DebugConfig.TestMode && plugin.InternalName.ToLowerInvariant() == "stub")
                 {
                     PendingAutoLogin = new SavedCredential(new User("Saul Goodman", "sgoodman", "sgoodman"), "sgoodman", AuthenticationMethod.Token, plugin.InternalName.ToLowerInvariant());
@@ -147,7 +146,7 @@ allowAutoLogin = !DebugConfig.DisableAutoLogin && !DebugConfig.TestMode;
                             switch (ati.AuthType)
                             {
                                 case AuthenticationMethod.Password:
-                                    name += " - username & password";
+                                    name += " - password";
                                     break;
                                 case AuthenticationMethod.QRCode:
                                     name += " - QR code";
