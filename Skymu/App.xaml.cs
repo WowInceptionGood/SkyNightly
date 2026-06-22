@@ -565,7 +565,25 @@ namespace Skymu
                     case "Theme":
                     case "UseSystemCulture":
                     case "CertificateStore":
-                        Universal.ShowMessage("You will need to restart " + Settings.BrandingName + " to fully apply this change.");
+                        Dialog dialog = new Dialog(
+                                   type: WindowBase.IconType.Information,
+                                   content: "You need to restart " + Settings.BrandingName + " to fully apply this change.",
+                                   header: "Restart " + Settings.BrandingName + "?",
+                                   brText: Lang["sF_CONFIRM_NO_BTN"],
+                                   blEnabled: true,
+                                   blText: Lang["sF_CONFIRM_YES"]
+                               );
+                        dialog.BRAction = () =>
+                        {
+                            e.Action(false);
+                            dialog.Close();
+                        };
+                        dialog.BLAction = () =>
+                        {
+                            Settings.Save();
+                            Universal.Restart();
+                        };
+                        dialog.ShowDialog();
                         break;
                 }
             };
