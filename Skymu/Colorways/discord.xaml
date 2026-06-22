@@ -19,7 +19,7 @@
 
     <sys:String x:Key="Colorway.Name">Discord</sys:String>
     <sys:String x:Key="Colorway.Author">Discord, OmegaAOL</sys:String>
-    <sys:String x:Key="Colorway.Description">Dark colorway using Discord's classic blurple colors.</sys:String>
+    <sys:String x:Key="Colorway.Description">Dark theme using Discord's classic blurple colors.</sys:String>
     <sys:Int32 x:Key="Colorway.Version">1</sys:Int32>
     <sys:Boolean x:Key="Colorway.IsDarkTheme">true</sys:Boolean>
 

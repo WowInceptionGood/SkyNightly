@@ -21,7 +21,7 @@
 
     <sys:String x:Key="Colorway.Name">Default</sys:String>
     <sys:String x:Key="Colorway.Author">Skype, OmegaAOL</sys:String>
-    <sys:String x:Key="Colorway.Description">The standard colors used in Skype.</sys:String>
+    <sys:String x:Key="Colorway.Description">The standard colors used in Skype 4 to 7.</sys:String>
     <sys:Int32 x:Key="Colorway.Version">1</sys:Int32>
     <sys:Boolean x:Key="Colorway.IsDarkTheme">false</sys:Boolean>
 

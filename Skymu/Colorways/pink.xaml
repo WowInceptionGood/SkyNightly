@@ -19,7 +19,7 @@
 
     <sys:String x:Key="Colorway.Name">Pink</sys:String>
     <sys:String x:Key="Colorway.Author">OmegaAOL</sys:String>
-    <sys:String x:Key="Colorway.Description">A pink-accented variant of the default Skype colorway.</sys:String>
+    <sys:String x:Key="Colorway.Description">A pink variant of the standard Skype color theme.</sys:String>
     <sys:Int32 x:Key="Colorway.Version">1</sys:Int32>
     <sys:Boolean x:Key="Colorway.IsDarkTheme">false</sys:Boolean>
 

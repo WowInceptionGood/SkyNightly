@@ -230,11 +230,7 @@
                         Tag="Royale.NormalColor" />
                     <ComboBoxItem
                         Padding="6,0"
-                        Content="Windows Vista"
-                        Tag="Aero.NormalColor" />
-                    <ComboBoxItem
-                        Padding="6,0"
-                        Content="Windows 7"
+                        Content="Windows Vista / 7"
                         Tag="Aero.NormalColor" />
                     <ComboBoxItem
                         Padding="6,0"

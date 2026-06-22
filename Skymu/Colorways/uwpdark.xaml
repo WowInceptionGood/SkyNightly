@@ -16,7 +16,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:sys="clr-namespace:System;assembly=mscorlib">
-    <sys:String x:Key="Colorway.Name">Metro Black</sys:String>
+    <sys:String x:Key="Colorway.Name">Skype UWP Dark</sys:String>
     <sys:String x:Key="Colorway.Author">Skype, OmegaAOL, Xaero</sys:String>
     <sys:String x:Key="Colorway.Description">Color theme of the dark mode that was used in the UWP version of Skype</sys:String>
     <sys:Int32 x:Key="Colorway.Version">1</sys:Int32>

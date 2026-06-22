@@ -564,7 +564,6 @@ namespace Skymu
                     case "WindowFrame":
                     case "Theme":
                     case "UseSystemCulture":
-                    case "CertificateStore":
                         Dialog dialog = new Dialog(
                                    type: WindowBase.IconType.Question,
                                    content: "You need to restart " + Settings.BrandingName + " to fully apply this change. Would you like to save your settings and restart?",
