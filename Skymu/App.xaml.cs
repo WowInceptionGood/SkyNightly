@@ -85,13 +85,26 @@ namespace Skymu
         public static string Platform = Runtime.DetectOS().ToDisplayString();
         public static string NetVersion = RuntimeInformation.FrameworkDescription;
         public static User CurrentUser;
-        public static bool IsDarkTheme = false;
         public static BitmapImage AnonymousAvatar;
         public static BitmapImage GroupAvatar;
         public static BitmapImage UnknownAvatar;
         public static ViewModels.MainViewModel ActiveViewModel;
         private static Mutex mutex;
         public static LanguageManager Lang => (LanguageManager)Current.Resources["Lang"];
+
+        public static event Action ThemeChanged;
+
+        private static bool _isDarkTheme = false;
+        public static bool IsDarkTheme
+        {
+            get => _isDarkTheme;
+            set
+            {
+                if (_isDarkTheme == value) return;
+                _isDarkTheme = value;
+                ThemeChanged?.Invoke();
+            }
+        }
 
         private static void PluginPopup(
             object sender,
@@ -542,9 +555,18 @@ namespace Skymu
             base.OnStartup(ev);
             Settings.Default.PropertyChanged += (sender, args) =>
             {
-                if (args.PropertyName == "PresentationFramework")
+                switch (args.PropertyName)
                 {
-                    ApplyPresentationFramework(Settings.PresentationFramework);
+                    case "PresentationFramework":
+                        ApplyPresentationFramework(Settings.PresentationFramework);
+                        break;
+                    case "Colorway":
+                    case "WindowFrame":
+                    case "Theme":
+                    case "UseSystemCulture":
+                    case "CertificateStore":
+                        Universal.ShowMessage("You will need to restart " + Settings.BrandingName + " to fully apply this change.");
+                        break;
                 }
             };
         }

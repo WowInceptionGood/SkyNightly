@@ -28,7 +28,7 @@
     DataContext="{StaticResource Lang}"
     FontFamily="Tahoma"
     FontSize="11"
-    Foreground="{StaticResource Text.VeryHighContrast}"
+    Foreground="{DynamicResource Text.VeryHighContrast}"
     Style="{StaticResource Page}"
     mc:Ignorable="d">
     <!--  Commented out as the page is a scrolling thing  -->
@@ -71,18 +71,18 @@
                 <CheckBox
                     Padding="6,0"
                     Content="Follow system regional variances (time format, date format, units)"
-                    Foreground="{StaticResource Text.VeryHighContrast}"
+                    Foreground="{DynamicResource Text.VeryHighContrast}"
                     IsChecked="{Binding Path=[UseSystemCulture], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
                 <TextBlock
                     Margin="8,0,0,0"
                     VerticalAlignment="Center"
-                    Foreground="{StaticResource Text.MediumContrast}"
+                    Foreground="{DynamicResource Text.MediumContrast}"
                     Text="(Requires restart)" />
             </StackPanel>
             <Rectangle
                 Height="1"
                 Margin="0,10,10,10"
-                Fill="{StaticResource Card.Border}" />
+                Fill="{DynamicResource Card.Border}" />
 
             <StackPanel Margin="0,5" Orientation="Horizontal">
                 <TextBlock
@@ -113,7 +113,7 @@
                 <TextBlock
                     Margin="8,0,0,0"
                     VerticalAlignment="Center"
-                    Foreground="{StaticResource Text.MediumContrast}"
+                    Foreground="{DynamicResource Text.MediumContrast}"
                     Text="(Requires restart)" />
             </StackPanel>
 
@@ -145,7 +145,7 @@
                 <TextBlock
                     Margin="8,0,0,0"
                     VerticalAlignment="Center"
-                    Foreground="{StaticResource Text.MediumContrast}"
+                    Foreground="{DynamicResource Text.MediumContrast}"
                     Text="(Requires restart)" />
             </StackPanel>
 
@@ -163,7 +163,7 @@
                 <TextBlock
                     Margin="8,0,0,0"
                     VerticalAlignment="Center"
-                    Foreground="{StaticResource Text.MediumContrast}"
+                    Foreground="{DynamicResource Text.MediumContrast}"
                     Text="(Requires restart)" />
             </StackPanel>
 
@@ -263,21 +263,21 @@
                 Margin="0,5"
                 Padding="6,0"
                 Content="Use the 'Classic Windows' Skype main color instead of the dynamic colors"
-                Foreground="{StaticResource Text.VeryHighContrast}"
+                Foreground="{DynamicResource Text.VeryHighContrast}"
                 IsChecked="{Binding Path=[FallbackFillColors], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
 
             <CheckBox
                 Margin="0,5"
                 Padding="6,0"
                 Content="Use the unreleased 'room-style' call UI from the mid-2012 Skype 5.5 mockups"
-                Foreground="{StaticResource Text.VeryHighContrast}"
+                Foreground="{DynamicResource Text.VeryHighContrast}"
                 IsChecked="{Binding Path=[RoomCallUI], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
 
             <CheckBox
                 Margin="0,5"
                 Padding="6,0"
                 Content="Use the call reconnecting sound instead of normal call out sound"
-                Foreground="{StaticResource Text.VeryHighContrast}"
+                Foreground="{DynamicResource Text.VeryHighContrast}"
                 IsChecked="{Binding Path=[CallOutToReconnectSound], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
 
             <StackPanel Margin="0,5,0,10" Grid.IsSharedSizeScope="True">
@@ -332,19 +332,19 @@
                 Margin="0,5"
                 Padding="6,0"
                 Content="Replace all dialog icons with 'Niko' from the game 'Oneshot'"
-                Foreground="{StaticResource Text.VeryHighContrast}"
+                Foreground="{DynamicResource Text.VeryHighContrast}"
                 IsChecked="{Binding Path=[NikoIcons], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
 
             <Rectangle
                 Height="1"
                 Margin="0,10,10,10"
-                Fill="{StaticResource Card.Border}" />
+                Fill="{DynamicResource Card.Border}" />
 
             <CheckBox
                 Margin="0,5"
                 Padding="6,0"
                 Content="Remember positioning (window size, location, sidebar size)"
-                Foreground="{StaticResource Text.VeryHighContrast}"
+                Foreground="{DynamicResource Text.VeryHighContrast}"
                 IsChecked="{Binding Path=[SaveWindowPosition], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
 
 
@@ -397,21 +397,21 @@
             <Rectangle
                 Height="1"
                 Margin="0,10,10,10"
-                Fill="{StaticResource Card.Border}" />
+                Fill="{DynamicResource Card.Border}" />
 
 
             <CheckBox
                 Margin="0,5"
                 Padding="6,0"
                 Content="Save credentials to file (credentials.xml)"
-                Foreground="{StaticResource Text.VeryHighContrast}"
+                Foreground="{DynamicResource Text.VeryHighContrast}"
                 IsChecked="{Binding Path=[SaveCredentials], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
 
             <CheckBox
                 Margin="0,5"
                 Padding="6,0"
                 Content="Enable automatic login if credentials are saved"
-                Foreground="{StaticResource Text.VeryHighContrast}"
+                Foreground="{DynamicResource Text.VeryHighContrast}"
                 IsChecked="{Binding Path=[AutoLogin], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
 
             <CheckBox
@@ -438,37 +438,37 @@
                 Margin="0,5"
                 Padding="6,0"
                 Content="Start with the window minimized"
-                Foreground="{StaticResource Text.VeryHighContrast}"
+                Foreground="{DynamicResource Text.VeryHighContrast}"
                 IsChecked="{Binding Path=[StartMinimized], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
             <CheckBox
                 Margin="0,5"
                 Padding="6,0"
                 Content="Allow multiple instances of the application to run at the same time (disabling this is expiremental)"
-                Foreground="{StaticResource Text.VeryHighContrast}"
+                Foreground="{DynamicResource Text.VeryHighContrast}"
                 IsChecked="{Binding Path=[AllowMultipleInstances], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
             <CheckBox
                 Margin="0,5"
                 Padding="6,0"
                 Content="Run the speed test on each startup (uses 10 MB of bandwidth for no real benefit)"
-                Foreground="{StaticResource Text.VeryHighContrast}"
+                Foreground="{DynamicResource Text.VeryHighContrast}"
                 IsChecked="{Binding Path=[AutoSpeedTest], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
             <CheckBox
                 Margin="0,5"
                 Padding="6,0"
                 Content="{Binding [sF_USERENTRY_CB_START_SKYPE]}"
-                Foreground="{StaticResource Text.VeryHighContrast}"
+                Foreground="{DynamicResource Text.VeryHighContrast}"
                 IsChecked="{Binding Path=[AutoLaunch], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
             <CheckBox
                 Margin="0,5"
                 Padding="6,0"
                 Content="Retain original versions of edited and deleted messages"
-                Foreground="{StaticResource Text.VeryHighContrast}"
+                Foreground="{DynamicResource Text.VeryHighContrast}"
                 IsChecked="{Binding Path=[StoreMessageHistory], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
 
             <Rectangle
                 Height="1"
                 Margin="0,10,10,10"
-                Fill="{StaticResource Card.Border}" />
+                Fill="{DynamicResource Card.Border}" />
 
 
             <StackPanel Margin="0,5" Orientation="Horizontal">
@@ -496,14 +496,14 @@
             <Rectangle
                 Height="1"
                 Margin="0,10,10,10"
-                Fill="{StaticResource Card.Border}" />
+                Fill="{DynamicResource Card.Border}" />
 
 
             <CheckBox
                 Margin="0,5"
                 Padding="6,0"
                 Content="Enable notifications"
-                Foreground="{StaticResource Text.VeryHighContrast}"
+                Foreground="{DynamicResource Text.VeryHighContrast}"
                 IsChecked="{Binding Path=[EnableNotifications], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
             <StackPanel Margin="0,5" Orientation="Horizontal">
                 <TextBlock
@@ -536,46 +536,46 @@
                 Margin="0,5"
                 Padding="6,0"
                 Content="Force active notifications to be blue instead of the accurate orange"
-                Foreground="{StaticResource Text.VeryHighContrast}"
+                Foreground="{DynamicResource Text.VeryHighContrast}"
                 IsChecked="{Binding Path=[BlueNotifications], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
 
             <Rectangle
                 Height="1"
                 Margin="0,10,10,10"
-                Fill="{StaticResource Card.Border}" />
+                Fill="{DynamicResource Card.Border}" />
 
             <CheckBox
                 Margin="0,5"
                 Padding="6,0"
                 Content="Enable the 'Skype Home' feature (experimental, may use 20-60 MB of additional RAM)"
-                Foreground="{StaticResource Text.VeryHighContrast}"
+                Foreground="{DynamicResource Text.VeryHighContrast}"
                 IsChecked="{Binding Path=[EnableSkypeHome], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
             <CheckBox
                 Margin="0,5"
                 Padding="6,0"
                 Content="Do not display community ads while using Skype Home"
-                Foreground="{StaticResource Text.VeryHighContrast}"
+                Foreground="{DynamicResource Text.VeryHighContrast}"
                 IsChecked="{Binding Path=[EnableAdBlock], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
 
 
             <Rectangle
                 Height="1"
                 Margin="0,10,10,10"
-                Fill="{StaticResource Card.Border}" />
+                Fill="{DynamicResource Card.Border}" />
 
 
             <CheckBox
                 Margin="0,5"
                 Padding="6,0"
                 Content="Anonymize my username and display name in Skymu's connected user statistics"
-                Foreground="{StaticResource Text.VeryHighContrast}"
+                Foreground="{DynamicResource Text.VeryHighContrast}"
                 IsChecked="{Binding Path=[Anonymize], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
 
             <CheckBox
                 MaxWidth="450"
                 Margin="0,5"
                 HorizontalAlignment="Left"
-                Foreground="{StaticResource Text.VeryHighContrast}"
+                Foreground="{DynamicResource Text.VeryHighContrast}"
                 IsChecked="{Binding Path=[BlockSkymuServerConnections], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}">
                 <TextBlock Margin="2,0" TextWrapping="Wrap"><Run Text="Completely block communication with the Skymu server and the updater (warning: not recommended, doing this breaks features in the Skymu client!)" /></TextBlock>
             </CheckBox>
@@ -583,7 +583,7 @@
             <Rectangle
                 Height="1"
                 Margin="0,10,10,10"
-                Fill="{StaticResource Card.Border}" />
+                Fill="{DynamicResource Card.Border}" />
 
             <StackPanel Grid.IsSharedSizeScope="True">
 

@@ -22,7 +22,7 @@
     Title="Updater"
     FontFamily="Tahoma"
     FontSize="11"
-    Foreground="{StaticResource Text.VeryHighContrast}"
+    Foreground="{DynamicResource Text.VeryHighContrast}"
     Style="{StaticResource Page}">
 
 

@@ -58,7 +58,7 @@
             <Setter Property="IconHeight" Value="24" />
             <Setter Property="IsRadioButton" Value="True" />
             <Setter Property="PressedOffsetY" Value="0" />
-            <Setter Property="TextColor" Value="{StaticResource Text.MediumContrast}" />
+            <Setter Property="TextColor" Value="{DynamicResource Text.MediumContrast}" />
             <Setter Property="TextFont" Value="Tahoma" />
             <Setter Property="TextLeftMargin" Value="39" />
             <Setter Property="TextSize" Value="11" />
@@ -96,12 +96,12 @@
                                 x:Name="InnerSlice"
                                 Margin="4,-1,4,2"
                                 Background="#ffffff"
-                                BackgroundPressed="{StaticResource Settings.ActiveTab}"
+                                BackgroundPressed="{DynamicResource Settings.ActiveTab}"
                                 Interactive="False"
                                 IsRadioButton="True"
                                 PressedOffsetY="0"
                                 Text="{TemplateBinding Text}"
-                                TextColor="{StaticResource Text.MediumContrast}"
+                                TextColor="{DynamicResource Text.MediumContrast}"
                                 TextFont="Tahoma"
                                 TextLeftMargin="39"
                                 TextSize="11" />
@@ -379,14 +379,14 @@
                             FontFamily="Tahoma"
                             FontSize="11"
                             FontWeight="Bold"
-                            Foreground="{StaticResource Text.HighContrast}"
+                            Foreground="{DynamicResource Text.HighContrast}"
                             Text="Skymu Customization:" />
                         <TextBlock
                             x:Name="CTabDescription"
                             Margin="7,0"
                             FontFamily="Tahoma"
                             FontSize="11"
-                            Foreground="{StaticResource Text.HighContrast}"
+                            Foreground="{DynamicResource Text.HighContrast}"
                             Text="Modify the way Skymu looks, feels, and behaves" />
                     </StackPanel>
                     <Frame

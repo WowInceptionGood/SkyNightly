@@ -67,7 +67,7 @@
     <SolidColorBrush x:Key="Metro.Sidebar.UserCountTab" Color="#FAF0F0" />
 
     <Color x:Key="AccentColor">#EE0000</Color>
-    <SolidColorBrush x:Key="Accent" Color="{StaticResource AccentColor}" />
+    <SolidColorBrush x:Key="Accent" Color="{DynamicResource AccentColor}" />
 
     <SolidColorBrush x:Key="Metro.Background.Tinted" Color="#FFFFF0F0" />
     <SolidColorBrush x:Key="Metro.Separator" Color="#FFE8D9D9" />

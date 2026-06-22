@@ -74,8 +74,8 @@ namespace Skymu
 
         public SliceControl()
         {
-
             InitializeComponent();
+            Universal.ThemeChanged += OnThemeChanged;
             _background = Background;
             _overlayRects = new[] { OverlayLeft, OverlayMiddle, OverlayRight };
 
@@ -217,9 +217,16 @@ namespace Skymu
                 _animatingControls.Remove(this);
                 if (_animatingControls.Count == 0)
                     _sharedAnimationTimer?.Stop();
+                Universal.ThemeChanged -= OnThemeChanged;
             };
 
         }
+
+        private void OnThemeChanged()
+        {
+            UpdateSlices();
+        }
+
         #endregion
 
         #region Properties

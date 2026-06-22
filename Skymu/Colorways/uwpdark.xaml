@@ -54,7 +54,7 @@
     <SolidColorBrush x:Key="Card.Border" Color="#33000000" />
 
     <Color x:Key="AccentColor">#FF00AFF0</Color>
-    <SolidColorBrush x:Key="Accent" Color="{StaticResource AccentColor}" />
+    <SolidColorBrush x:Key="Accent" Color="{DynamicResource AccentColor}" />
 
     <SolidColorBrush x:Key="Text.VeryHighContrast" Color="#FFFFFFFF" />
     <SolidColorBrush x:Key="Text.HighContrast" Color="#FFFFFFFF" />

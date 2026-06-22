@@ -25,7 +25,7 @@
     Height="400"
     FontFamily="Tahoma"
     FontSize="11"
-    Foreground="{StaticResource Text.VeryHighContrast}"
+    Foreground="{DynamicResource Text.VeryHighContrast}"
     Style="{StaticResource Page}">
     <Grid>
         <Grid.RowDefinitions>

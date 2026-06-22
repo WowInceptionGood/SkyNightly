@@ -48,7 +48,7 @@
             FontFamily="Arial"
             FontSize="20"
             FontWeight="Bold"
-            Foreground="{StaticResource Text.HighContrast}"
+            Foreground="{DynamicResource Text.HighContrast}"
             Text="Take another breath" />
         <TextBlock
             x:Name="BuildVersion"

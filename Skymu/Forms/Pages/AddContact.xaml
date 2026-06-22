@@ -26,7 +26,7 @@
     Title="Add a contact"
     d:Background="#FFFFFF"
     FontFamily="Tahoma"
-    Foreground="{StaticResource Text.VeryHighContrast}"
+    Foreground="{DynamicResource Text.VeryHighContrast}"
     Style="{StaticResource Page}"
     mc:Ignorable="d">
     <Page.Resources>
@@ -49,7 +49,7 @@
                 <global:SliceControl
                     Source="{Binding Converter={StaticResource AssetLoader}, Source='Assets/Universal/Icon/plus.png'}"
                     Text="{Binding Path='[sAC_MORE_ADDPSTN]', Source={StaticResource Lang}}"
-                    TextColor="{StaticResource Text.Hyperlink}"
+                    TextColor="{DynamicResource Text.Hyperlink}"
                     TextFont="Tahoma"
                     TextLeftMargin="22"
                     TextSize="11" />
@@ -57,7 +57,7 @@
                     Margin="0,2,0,0"
                     Source="{Binding Converter={StaticResource AssetLoader}, Source='Assets/Universal/Icon/add.png'}"
                     Text="{Binding Path='[sAC_MORE_IMPORT]', Source={StaticResource Lang}}"
-                    TextColor="{StaticResource Text.Hyperlink}"
+                    TextColor="{DynamicResource Text.Hyperlink}"
                     TextFont="Tahoma"
                     TextLeftMargin="22"
                     TextSize="11" />
@@ -65,7 +65,7 @@
                     Margin="0,2,0,0"
                     Source="{Binding Converter={StaticResource AssetLoader}, Source='Assets/Universal/Icon/megaphone.png'}"
                     Text="{Binding Path='[sAC_MORE_SHARE]', Source={StaticResource Lang}}"
-                    TextColor="{StaticResource Text.Hyperlink}"
+                    TextColor="{DynamicResource Text.Hyperlink}"
                     TextFont="Tahoma"
                     TextLeftMargin="22"
                     TextSize="11" />
@@ -116,7 +116,7 @@
                         FontFamily="Tahoma"
                         FontSize="11"
                         FontWeight="Bold"
-                        Foreground="{StaticResource Text.VeryHighContrast}"
+                        Foreground="{DynamicResource Text.VeryHighContrast}"
                         Text="{Binding Path='[sADDADDAFRIEND_SCR1_CAPTION]', Source={StaticResource Lang}}" />
                     <uc:QuickLTB
                         Key="sF_ADDFRIEND_FIND_LABEL"
@@ -125,7 +125,7 @@
                         Margin="0,0,0,18"
                         FontFamily="Tahoma"
                         FontSize="11"
-                        Foreground="{StaticResource Text.VeryHighContrast}" />
+                        Foreground="{DynamicResource Text.VeryHighContrast}" />
                     <Grid
                         Grid.Row="1"
                         Grid.RowSpan="2"
@@ -161,7 +161,7 @@
                         Margin="0,15,0,26"
                         FontFamily="Tahoma"
                         FontSize="11"
-                        Foreground="{StaticResource Text.VeryHighContrast}"
+                        Foreground="{DynamicResource Text.VeryHighContrast}"
                         Text="{Binding Path='[sF_SEARCH_MANDALAY_LB_INTRO]', Source={StaticResource Lang}}"
                         TextWrapping="Wrap" />
                     <!--  TODO: Progressbar accuracy  -->
@@ -179,7 +179,7 @@
                         Margin="0,15,0,26"
                         FontFamily="Tahoma"
                         FontSize="11"
-                        Foreground="{StaticResource Text.VeryHighContrast}"
+                        Foreground="{DynamicResource Text.VeryHighContrast}"
                         Visibility="Collapsed" />
 
                     <StackPanel
@@ -212,7 +212,7 @@
                             <TextBlock
                                 Margin="5,0,0,0"
                                 VerticalAlignment="Bottom"
-                                Foreground="{StaticResource Text.VeryHighContrast}"
+                                Foreground="{DynamicResource Text.VeryHighContrast}"
                                 Text="{Binding Path='[sF_ADDFRIEND_LABEL4_1]', Source={StaticResource Lang}}"
                                 TextWrapping="Wrap" />
                         </DockPanel>
@@ -228,7 +228,7 @@
                             <TextBlock
                                 Margin="5,0,0,0"
                                 VerticalAlignment="Bottom"
-                                Foreground="{StaticResource Text.VeryHighContrast}"
+                                Foreground="{DynamicResource Text.VeryHighContrast}"
                                 TextWrapping="Wrap">
                                 <TextBlock.Text>
                                     <MultiBinding StringFormat="{}{0} {1}">
@@ -250,7 +250,7 @@
                             <TextBlock
                                 Margin="5,0,0,0"
                                 VerticalAlignment="Bottom"
-                                Foreground="{StaticResource Text.VeryHighContrast}"
+                                Foreground="{DynamicResource Text.VeryHighContrast}"
                                 Text="{Binding Path='[sF_ADDFRIEND_LABEL4_4]', Source={StaticResource Lang}}"
                                 TextWrapping="Wrap" />
                         </DockPanel>
@@ -258,7 +258,7 @@
                             Margin="0,25,0,0"
                             Source="{Binding Converter={StaticResource AssetLoader}, Source='Assets/Universal/Icon/megaphone.png'}"
                             Text="{Binding Path='[sAC_INVITE_UNFOUND]', Source={StaticResource Lang}}"
-                            TextColor="{StaticResource Text.Hyperlink}"
+                            TextColor="{DynamicResource Text.Hyperlink}"
                             TextLeftMargin="22"
                             TextSize="11" />
                     </StackPanel>
@@ -307,7 +307,7 @@
                     Margin="0,0,0,10"
                     FontFamily="Tahoma"
                     FontSize="11"
-                    Foreground="{StaticResource Text.VeryHighContrast}">
+                    Foreground="{DynamicResource Text.VeryHighContrast}">
                     <Binding Path="DisplayName" />
                 </uc:QuickLTB>
 
@@ -317,7 +317,7 @@
                     Grid.Row="1"
                     Width="250"
                     FontFamily="Tahoma"
-                    Foreground="{StaticResource Text.VeryHighContrast}"
+                    Foreground="{DynamicResource Text.VeryHighContrast}"
                     Text="Hello, Skymu user here!" />
                 <!--  Details of found contact  -->
                 <!--  TODO: Fix this up  -->
@@ -325,7 +325,7 @@
                     x:Name="FoundContactDetails"
                     Grid.Row="2"
                     Background="#FFF"
-                    BorderBrush="{StaticResource Card.Border}"
+                    BorderBrush="{DynamicResource Card.Border}"
                     BorderThickness="1,0,1,1"
                     CornerRadius="0,0,4,4">
                     <Grid>
@@ -354,7 +354,7 @@
                                         BlurRadius="4"
                                         Direction="270"
                                         ShadowDepth="1"
-                                        Color="{StaticResource Avatar.Shadow}" />
+                                        Color="{DynamicResource Avatar.Shadow}" />
                                 </Image.Effect>
                             </Image>
                             <!--  Information column  -->

@@ -37,7 +37,7 @@
                 <Setter Property="TextOptions.TextRenderingMode" Value="Grayscale" />
                 <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
                 <Setter Property="TextOptions.TextHintingMode" Value="Auto" />
-                <Setter Property="Foreground" Value="{StaticResource Text.VeryHighContrast}" />
+                <Setter Property="Foreground" Value="{DynamicResource Text.VeryHighContrast}" />
                 <Style.Triggers>
                     <DataTrigger Binding="{Binding Source={x:Static preferences:Settings.Default}, Path=[UseClearType]}" Value="True">
                         <Setter Property="TextOptions.TextRenderingMode" Value="ClearType" />
@@ -55,7 +55,7 @@
                 <Setter Property="TextOptions.TextRenderingMode" Value="Grayscale" />
                 <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
                 <Setter Property="TextOptions.TextHintingMode" Value="Auto" />
-                <Setter Property="Foreground" Value="{StaticResource Text.VeryHighContrast}" />
+                <Setter Property="Foreground" Value="{DynamicResource Text.VeryHighContrast}" />
                 <Style.Triggers>
                     <DataTrigger Binding="{Binding Source={x:Static preferences:Settings.Default}, Path=[UseClearType]}" Value="True">
                         <Setter Property="TextOptions.TextRenderingMode" Value="ClearType" />
@@ -68,13 +68,13 @@
                 <!--  This fixes the red hyperlink hover color  -->
                 <Style.Triggers>
                     <Trigger Property="IsMouseOver" Value="True">
-                        <Setter Property="Foreground" Value="{StaticResource Accent}" />
+                        <Setter Property="Foreground" Value="{DynamicResource Accent}" />
                     </Trigger>
                     <Trigger Property="IsMouseOver" Value="True">
                         <Setter Property="TextDecorations" Value="Underline" />
                     </Trigger>
                 </Style.Triggers>
-                <Setter Property="Foreground" Value="{StaticResource Text.Hyperlink}" />
+                <Setter Property="Foreground" Value="{DynamicResource Text.Hyperlink}" />
                 <Setter Property="TextDecorations" Value="{x:Null}" />
             </Style>
             <Style BasedOn="{x:Null}" TargetType="{x:Type MenuItem}">
@@ -86,7 +86,7 @@
                         <Setter Property="MaxHeight" Value="20" />
                         <Setter Property="Padding" Value="6,3" />
                         <Setter Property="Margin" Value="0" />
-                        <Setter Property="Foreground" Value="{StaticResource Text.VeryHighContrast}" />
+                        <Setter Property="Foreground" Value="{DynamicResource Text.VeryHighContrast}" />
                     </Trigger>
                     <Trigger Property="Role" Value="TopLevelItem">
                         <Setter Property="Height" Value="20" />

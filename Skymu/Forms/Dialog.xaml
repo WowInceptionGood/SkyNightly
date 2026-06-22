@@ -22,7 +22,7 @@
     Width="383"
     MinHeight="235"
     MaxHeight="800"
-    Background="{StaticResource Card.Background}"
+    Background="{DynamicResource Card.Background}"
     ResizeMode="NoResize"
     SizeToContent="Height"
     Style="{StaticResource Window}"
@@ -59,8 +59,8 @@
             Panel.ZIndex="0">
             <Border
                 Name="GradientTop"
-                Background="{StaticResource Strip.Background}"
-                BorderBrush="{StaticResource Card.Border}"
+                Background="{DynamicResource Strip.Background}"
+                BorderBrush="{DynamicResource Card.Border}"
                 BorderThickness="0,0,0,1" />
             <TextBlock
                 x:Name="Header"
@@ -69,7 +69,7 @@
                 FontFamily="Arial"
                 FontSize="13"
                 FontWeight="Bold"
-                Foreground="{StaticResource Text.HighContrast}"
+                Foreground="{DynamicResource Text.HighContrast}"
                 Text="Title goes here" />
         </Grid>
         <!--  Content Section (grows with text)  -->
@@ -90,7 +90,7 @@
                     Name="Description"
                     FontFamily="Tahoma"
                     FontSize="11"
-                    Foreground="{StaticResource Text.VeryHighContrast}"
+                    Foreground="{DynamicResource Text.VeryHighContrast}"
                     LineHeight="16"
                     Text="Message goes here"
                     TextWrapping="Wrap" />
@@ -100,8 +100,8 @@
         <Grid Grid.Row="2" Height="44">
             <Border
                 Name="GradientBottom"
-                Background="{StaticResource Strip.Background}"
-                BorderBrush="{StaticResource Card.Border}"
+                Background="{DynamicResource Strip.Background}"
+                BorderBrush="{DynamicResource Card.Border}"
                 BorderThickness="0,1,0,0" />
             <Grid x:Name="BottomControlsGrid" Width="Auto">
                 <Grid.ColumnDefinitions>
@@ -132,7 +132,7 @@
                     Content="{Binding [sF_CONFIRM_CBNOMORE], Source={StaticResource Lang}}"
                     FontFamily="Tahoma"
                     FontSize="11"
-                    Foreground="{StaticResource Text.VeryHighContrast}"
+                    Foreground="{DynamicResource Text.VeryHighContrast}"
                     Visibility="Collapsed" />
                 <StackPanel
                     Grid.Column="1"

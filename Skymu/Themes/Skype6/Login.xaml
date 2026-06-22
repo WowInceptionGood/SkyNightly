@@ -25,7 +25,7 @@
     Title="{Binding [sMAINMENU_SKYPE]}"
     Width="526"
     Height="429"
-    Background="{StaticResource Accent}"
+    Background="{DynamicResource Accent}"
     Closing="Login_Closing"
     DataContext="{StaticResource Lang}"
     FontFamily="Tahoma"
@@ -37,7 +37,7 @@
     mc:Ignorable="d">
     <Window.Resources>
         <Style x:Key="HoverUnderlineHyperlink" TargetType="{x:Type Hyperlink}">
-            <Setter Property="Foreground" Value="{StaticResource Text.Hyperlink}" />
+            <Setter Property="Foreground" Value="{DynamicResource Text.Hyperlink}" />
             <Setter Property="TextDecorations" Value="{x:Null}" />
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
@@ -57,9 +57,9 @@
             Grid.ColumnSpan="3"
             Width="300"
             HorizontalAlignment="Center"
-            Fill="{StaticResource Card.Background}"
+            Fill="{DynamicResource Card.Background}"
             Stretch="Fill" />
-        <Rectangle Grid.Row="0" Fill="{StaticResource Metro.Border}" />
+        <Rectangle Grid.Row="0" Fill="{DynamicResource Metro.Border}" />
         <!--  placeholder for menu bar so designer donesnt mess up  -->
         <Grid Grid.Row="1">
             <Image
@@ -120,7 +120,7 @@
                     FontFamily="Arial"
                     FontSize="20"
                     FontWeight="Bold"
-                    Foreground="{StaticResource Accent}"
+                    Foreground="{DynamicResource Accent}"
                     Text="{Binding [sF_LOGIN_WELCOME]}" />
                 <Grid
                     x:Name="LoginControls"
@@ -175,7 +175,7 @@
                             Height="28"
                             Margin="0,0,0,0"
                             FontWeight="Normal"
-                            Foreground="{StaticResource Text.Hyperlink}">
+                            Foreground="{DynamicResource Text.Hyperlink}">
                             <Hyperlink
                                 NavigateUri="#"
                                 RequestNavigate="Hyperlink_RequestNavigate"
@@ -205,7 +205,7 @@
                         Source="Assets/Themeable/Login/pill.png"
                         StackDirection="Vertical"
                         Text="{Binding [sZAPBUTTON_SIGNIN]}"
-                        TextColor="{StaticResource Text.HighContrast}"
+                        TextColor="{DynamicResource Text.HighContrast}"
                         TextFont="Tahoma"
                         TextHorizontalAlignment="Center"
                         TextSize="11"
@@ -218,7 +218,7 @@
                         Width="270"
                         Height="55"
                         VerticalAlignment="Top"
-                        Background="{StaticResource Accent}"
+                        Background="{DynamicResource Accent}"
                         CornerRadius="5">
                         <StackPanel
                             Grid.Row="1"
@@ -232,7 +232,7 @@
                                 Content="{Binding [sF_USERENTRY_CB_STOREPASSWORD]}"
                                 FontFamily="Tahoma"
                                 FontSize="11"
-                                Foreground="{StaticResource Text.VeryLowContrast}"
+                                Foreground="{DynamicResource Text.VeryLowContrast}"
                                 IsChecked="{Binding Path=[SaveCredentials], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
                             <CheckBox
                                 x:Name="StartOnWinStart"
@@ -241,7 +241,7 @@
                                 Content="{Binding [sF_USERENTRY_CB_START_SKYPE]}"
                                 FontFamily="Tahoma"
                                 FontSize="11"
-                                Foreground="{StaticResource Text.VeryLowContrast}"
+                                Foreground="{DynamicResource Text.VeryLowContrast}"
                                 IsChecked="{Binding Path=[AutoLaunch], Mode=TwoWay, Source={x:Static preferences:Settings.Default}}" />
                         </StackPanel>
                     </Border>

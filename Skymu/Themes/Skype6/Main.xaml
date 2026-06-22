@@ -33,7 +33,7 @@
     MinHeight="450"
     Activated="Window_Activated"
     AllowsTransparency="False"
-    Background="{StaticResource Metro.Background}"
+    Background="{DynamicResource Metro.Background}"
     Closing="Main_Closing"
     Deactivated="Window_Deactivated"
     FontFamily="Tahoma"
@@ -50,7 +50,7 @@
             <Setter Property="FontSize" Value="11" />
             <Setter Property="FontFamily" Value="Tahoma" />
             <Setter Property="Background" Value="Transparent" />
-            <Setter Property="Foreground" Value="{StaticResource Text.VeryHighContrast}" />
+            <Setter Property="Foreground" Value="{DynamicResource Text.VeryHighContrast}" />
             <Setter Property="Focusable" Value="True" />
             <Setter Property="TextWrapping" Value="Wrap" />
         </Style>
@@ -99,13 +99,13 @@
             <Setter Property="FontSize" Value="11" />
             <Setter Property="FontFamily" Value="Tahoma" />
             <Setter Property="TextTrimming" Value="CharacterEllipsis" />
-            <Setter Property="Foreground" Value="{StaticResource Text.VeryHighContrast}" />
+            <Setter Property="Foreground" Value="{DynamicResource Text.VeryHighContrast}" />
         </Style>
         <Style x:Key="ContactStatusStyle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="11" />
             <Setter Property="FontFamily" Value="Tahoma" />
             <Setter Property="Background" Value="Transparent" />
-            <Setter Property="Foreground" Value="{StaticResource Text.LowContrast}" />
+            <Setter Property="Foreground" Value="{DynamicResource Text.LowContrast}" />
             <Setter Property="TextTrimming" Value="CharacterEllipsis" />
         </Style>
         <!--  User template  -->
@@ -136,7 +136,7 @@
                                 Direction="270"
                                 Opacity="0.50"
                                 ShadowDepth="1"
-                                Color="{StaticResource Avatar.Shadow}" />
+                                Color="{DynamicResource Avatar.Shadow}" />
                         </Border.Effect>
                         <Grid>
                             <Image RenderOptions.BitmapScalingMode="HighQuality" Stretch="UniformToFill">
@@ -147,7 +147,7 @@
                                     </MultiBinding>
                                 </Image.Source>
                             </Image>
-                            <Border BorderBrush="{StaticResource Avatar.Border}" BorderThickness="1" />
+                            <Border BorderBrush="{DynamicResource Avatar.Border}" BorderThickness="1" />
                         </Grid>
                     </Border>
                 </Grid>
@@ -215,7 +215,7 @@
                                 Direction="270"
                                 Opacity="0.50"
                                 ShadowDepth="1"
-                                Color="{StaticResource Avatar.Shadow}" />
+                                Color="{DynamicResource Avatar.Shadow}" />
                         </Border.Effect>
                         <Grid>
                             <Image RenderOptions.BitmapScalingMode="HighQuality" Stretch="UniformToFill">
@@ -226,7 +226,7 @@
                                     </MultiBinding>
                                 </Image.Source>
                             </Image>
-                            <Border BorderBrush="{StaticResource Avatar.Border}" BorderThickness="1" />
+                            <Border BorderBrush="{DynamicResource Avatar.Border}" BorderThickness="1" />
                         </Grid>
                     </Border>
                 </Grid>
@@ -277,13 +277,13 @@
                                     Height="20"
                                     Margin="0"
                                     Padding="8,0"
-                                    Background="{StaticResource Sidebar.Header}">
+                                    Background="{DynamicResource Sidebar.Header}">
                                     <TextBlock
                                         Margin="2,0,0,1"
                                         VerticalAlignment="Center"
                                         FontFamily="Tahoma"
                                         FontSize="11"
-                                        Foreground="{StaticResource Text.VeryHighContrast}"
+                                        Foreground="{DynamicResource Text.VeryHighContrast}"
                                         Text="{Binding CategoryName}" />
                                 </Border>
                             </DataTemplate>
@@ -310,7 +310,7 @@
                                         Grid.Column="1"
                                         Margin="10,0,0,0"
                                         VerticalAlignment="Center"
-                                        Foreground="{StaticResource Text.VeryHighContrast}"
+                                        Foreground="{DynamicResource Text.VeryHighContrast}"
                                         Style="{StaticResource ContactStatusStyle}"
                                         Text="{Binding DisplayName}" />
                                 </Grid>
@@ -348,7 +348,7 @@
                                 BlurRadius="2"
                                 Direction="270"
                                 ShadowDepth="1"
-                                Color="{StaticResource Avatar.Shadow}" />
+                                Color="{DynamicResource Avatar.Shadow}" />
                         </Border.Effect>
                         <Grid>
                             <Image RenderOptions.BitmapScalingMode="HighQuality" Stretch="UniformToFill">
@@ -359,7 +359,7 @@
                                     </MultiBinding>
                                 </Image.Source>
                             </Image>
-                            <Border BorderBrush="{StaticResource Avatar.Border}" BorderThickness="1" />
+                            <Border BorderBrush="{DynamicResource Avatar.Border}" BorderThickness="1" />
                         </Grid>
                     </Border>
                 </Grid>
@@ -432,13 +432,13 @@
                 Height="20"
                 Margin="0"
                 Padding="8,0"
-                Background="{StaticResource Sidebar.Header}">
+                Background="{DynamicResource Sidebar.Header}">
                 <TextBlock
                     Margin="2,0,0,1"
                     VerticalAlignment="Center"
                     FontFamily="Tahoma"
                     FontSize="11"
-                    Foreground="{StaticResource Text.VeryHighContrast}"
+                    Foreground="{DynamicResource Text.VeryHighContrast}"
                     Text="{Binding DateText}" />
             </Border>
         </DataTemplate>
@@ -468,7 +468,7 @@
                     VerticalAlignment="Center"
                     FontFamily="Tahoma"
                     FontSize="11"
-                    Foreground="{StaticResource Text.VeryHighContrast}"
+                    Foreground="{DynamicResource Text.VeryHighContrast}"
                     Text="{Binding DisplayName}"
                     TextTrimming="CharacterEllipsis" />
             </Grid>
@@ -504,7 +504,7 @@
                     VerticalAlignment="Center"
                     FontFamily="Tahoma"
                     FontSize="11"
-                    Foreground="{StaticResource Text.VeryHighContrast}"
+                    Foreground="{DynamicResource Text.VeryHighContrast}"
                     Text="{Binding DisplayName}"
                     TextTrimming="CharacterEllipsis" />
             </Grid>
@@ -556,7 +556,7 @@
                             Grid.Column="1"
                             FontFamily="Tahoma"
                             FontSize="11"
-                            Foreground="{StaticResource Text.LowContrast}"
+                            Foreground="{DynamicResource Text.LowContrast}"
                             LineHeight="1"
                             TextTrimming="CharacterEllipsis"
                             TextWrapping="NoWrap">
@@ -602,7 +602,7 @@
                         <TextBlock
                             FontFamily="Tahoma"
                             FontSize="11"
-                            Foreground="{StaticResource Text.LowContrast}"
+                            Foreground="{DynamicResource Text.LowContrast}"
                             Text="{Binding Time, StringFormat=h:mm tt}"
                             Visibility="{Binding Identifier, Converter={StaticResource PreviewVisibilityConverter}, ConverterParameter=invert}" />
                         <global:SliceControl
@@ -692,7 +692,7 @@
                             Grid.Column="1"
                             FontFamily="Tahoma"
                             FontSize="11"
-                            Foreground="{StaticResource Text.LowContrast}"
+                            Foreground="{DynamicResource Text.LowContrast}"
                             LineHeight="1"
                             TextTrimming="CharacterEllipsis"
                             TextWrapping="NoWrap">
@@ -738,7 +738,7 @@
                         <TextBlock
                             FontFamily="Tahoma"
                             FontSize="11"
-                            Foreground="{StaticResource Text.LowContrast}"
+                            Foreground="{DynamicResource Text.LowContrast}"
                             Text="{Binding Time, StringFormat=h:mm tt}"
                             Visibility="{Binding Identifier, Converter={StaticResource PreviewVisibilityConverter}, ConverterParameter=invert}" />
                         <global:SliceControl
@@ -768,7 +768,7 @@
                     Grid.Column="1"
                     FontFamily="Tahoma"
                     FontSize="11"
-                    Foreground="{StaticResource Text.LowContrast}"
+                    Foreground="{DynamicResource Text.LowContrast}"
                     Text="{Binding StartedBy, StringFormat='Call started by: {0}'}" />
                 <TextBlock
                     Grid.Column="2"
@@ -776,7 +776,7 @@
                     VerticalAlignment="Top"
                     FontFamily="Tahoma"
                     FontSize="11"
-                    Foreground="{StaticResource Text.LowContrast}"
+                    Foreground="{DynamicResource Text.LowContrast}"
                     Text="{Binding Time, StringFormat=h:mm tt}" />
             </Grid>
         </DataTemplate>
@@ -792,7 +792,7 @@
                     Grid.Column="1"
                     FontFamily="Tahoma"
                     FontSize="11"
-                    Foreground="{StaticResource Text.LowContrast}"
+                    Foreground="{DynamicResource Text.LowContrast}"
                     Text="{Binding Duration, StringFormat='Call ended, duration: {0}'}" />
                 <TextBlock
                     Grid.Column="2"
@@ -800,7 +800,7 @@
                     VerticalAlignment="Top"
                     FontFamily="Tahoma"
                     FontSize="11"
-                    Foreground="{StaticResource Text.LowContrast}"
+                    Foreground="{DynamicResource Text.LowContrast}"
                     Text="{Binding Time, StringFormat=h:mm tt}" />
             </Grid>
         </DataTemplate>
@@ -857,7 +857,7 @@
                                 <!--  Username section  -->
                                 <Border
                                     Grid.Row="0"
-                                    BorderBrush="{StaticResource Metro.Border}"
+                                    BorderBrush="{DynamicResource Metro.Border}"
                                     BorderThickness="0,0,0,1">
                                     <Grid Height="32" Margin="0,0,0,4">
                                         <global:SliceControl
@@ -872,7 +872,7 @@
                                             Source="Assets/Themeable/Main/header.png"
                                             StackDirection="Vertical"
                                             Text="Saul Goodman"
-                                            TextColor="{StaticResource Text.HighContrast}"
+                                            TextColor="{DynamicResource Text.HighContrast}"
                                             TextFont="Arial"
                                             TextLeftMargin="43"
                                             TextSize="13"
@@ -1107,7 +1107,7 @@
                                         LostKeyboardFocus="SearchBox_Unfocused" />
                                 </Grid>
                                 <!--  Sidebar tabs  -->
-                                <Border BorderBrush="{StaticResource Card.Border}" BorderThickness="1,1,1,0">
+                                <Border BorderBrush="{DynamicResource Card.Border}" BorderThickness="1,1,1,0">
                                     <Grid x:Name="SidebarTabs">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition x:Name="ContactsColumn" Width="*" />
@@ -1129,7 +1129,7 @@
                                             Source="Assets/Themeable/Main/contacts.png"
                                             StackDirection="Vertical"
                                             Text="{Binding [sZAPBUTTON_CONTACTS], Source={StaticResource Lang}}"
-                                            TextColor="{StaticResource Text.HighContrast}"
+                                            TextColor="{DynamicResource Text.HighContrast}"
                                             TextFont="Arial"
                                             TextLeftMargin="31"
                                             TextSize="13"
@@ -1150,7 +1150,7 @@
                                             Source="Assets/Themeable/Main/servers.png"
                                             StackDirection="Vertical"
                                             Text="Servers"
-                                            TextColor="{StaticResource Text.HighContrast}"
+                                            TextColor="{DynamicResource Text.HighContrast}"
                                             TextFont="Arial"
                                             TextLeftMargin="29"
                                             TextSize="13"
@@ -1172,7 +1172,7 @@
                                             Source="Assets/Themeable/Main/recents.png"
                                             StackDirection="Vertical"
                                             Text="{Binding [sRECENTS_TAB_TEXT], Source={StaticResource Lang}}"
-                                            TextColor="{StaticResource Text.HighContrast}"
+                                            TextColor="{DynamicResource Text.HighContrast}"
                                             TextFont="Arial"
                                             TextLeftMargin="30"
                                             TextSize="13"
@@ -1185,7 +1185,7 @@
                             <Border
                                 Grid.Row="1"
                                 Background="White"
-                                BorderBrush="{StaticResource Card.Border}"
+                                BorderBrush="{DynamicResource Card.Border}"
                                 BorderThickness="1,0,1,1">
                                 <Grid>
                                     <Grid.RowDefinitions>
@@ -1384,15 +1384,15 @@
                                     <!--  User count  -->
                                     <Border
                                         Grid.Row="1"
-                                        Background="{StaticResource Metro.Sidebar.UserCountTab}"
-                                        BorderBrush="{StaticResource Metro.Border}"
+                                        Background="{DynamicResource Metro.Sidebar.UserCountTab}"
+                                        BorderBrush="{DynamicResource Metro.Border}"
                                         BorderThickness="0,1,0,0">
                                         <TextBlock
                                             x:Name="GlobalUserCount"
                                             Margin="7,0"
                                             HorizontalAlignment="Left"
                                             VerticalAlignment="Center"
-                                            Foreground="{StaticResource Text.LowContrast}"
+                                            Foreground="{DynamicResource Text.LowContrast}"
                                             Text="Sky Multiprotocol. All rights reserved." />
                                     </Border>
                                 </Grid>
@@ -1405,7 +1405,7 @@
                         <Border
                             x:Name="SkypeSplitter"
                             Grid.Column="1"
-                            BorderBrush="{StaticResource Metro.Border}"
+                            BorderBrush="{DynamicResource Metro.Border}"
                             BorderThickness="0,0,1,0"
                             Cursor="SizeWE"
                             MouseLeftButtonDown="SkypeSplitter_Press"
@@ -1428,7 +1428,7 @@
                             <Border
                                 Grid.Row="0"
                                 Margin="8,3,8,0"
-                                BorderBrush="{StaticResource Metro.Border}"
+                                BorderBrush="{DynamicResource Metro.Border}"
                                 BorderThickness="0,0,0,1">
                                 <Grid
                                     Height="32"
@@ -1446,7 +1446,7 @@
                                         Source="Assets/Themeable/Main/header.png"
                                         StackDirection="Vertical"
                                         Text="{Binding DisplayName}"
-                                        TextColor="{StaticResource Text.HighContrast}"
+                                        TextColor="{DynamicResource Text.HighContrast}"
                                         TextFont="Arial"
                                         TextLeftMargin="13"
                                         TextSize="13"
@@ -1493,7 +1493,7 @@
                                                             BlurRadius="4"
                                                             Direction="270"
                                                             ShadowDepth="1"
-                                                            Color="{StaticResource Avatar.Shadow}" />
+                                                            Color="{DynamicResource Avatar.Shadow}" />
                                                     </Image.Effect>
                                                 </Image>
                                                 <!--  Information column  -->
@@ -1618,7 +1618,7 @@
                                                                         BlurRadius="4"
                                                                         Direction="270"
                                                                         ShadowDepth="1"
-                                                                        Color="{StaticResource Avatar.Shadow}" />
+                                                                        Color="{DynamicResource Avatar.Shadow}" />
                                                                 </Image.Effect>
                                                             </Image>
                                                         </StackPanel>
@@ -1652,7 +1652,7 @@
                                                             BlurRadius="4"
                                                             Direction="270"
                                                             ShadowDepth="1"
-                                                            Color="{StaticResource Avatar.Shadow}" />
+                                                            Color="{DynamicResource Avatar.Shadow}" />
                                                     </Image.Effect>
                                                 </Image>
                                                 <!--  Information column  -->
@@ -1710,7 +1710,7 @@
                                                             BlurRadius="4"
                                                             Direction="270"
                                                             ShadowDepth="1"
-                                                            Color="{StaticResource Avatar.Shadow}" />
+                                                            Color="{DynamicResource Avatar.Shadow}" />
                                                     </Image.Effect>
                                                 </Image>
                                                 <!--  Information column  -->
@@ -1757,7 +1757,7 @@
                                 x:Name="MessageWindow"
                                 Grid.Row="3"
                                 Margin="0,4,0,0"
-                                Background="{StaticResource Metro.Background}">
+                                Background="{DynamicResource Metro.Background}">
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition x:Name="ChatButtonRow" Height="34" />
@@ -1850,7 +1850,7 @@
                                     <Rectangle
                                         Grid.Row="1"
                                         Height="1"
-                                        Fill="{StaticResource Chatbar.Divider}" />
+                                        Fill="{DynamicResource Chatbar.Divider}" />
                                     <Image
                                         x:Name="Spinner"
                                         Grid.Row="3"
@@ -1955,12 +1955,12 @@
                                                     x:Name="TypingIndicatorText"
                                                     Margin="3,0,0,0"
                                                     VerticalAlignment="Center"
-                                                    Foreground="{StaticResource Text.MediumContrast}" />
+                                                    Foreground="{DynamicResource Text.MediumContrast}" />
                                             </StackPanel>
                                             <Border
                                                 x:Name="MessageBoxPanel"
                                                 HorizontalAlignment="Center"
-                                                BorderBrush="{StaticResource Sidebar.Header}"
+                                                BorderBrush="{DynamicResource Sidebar.Header}"
                                                 BorderThickness="1">
                                                 <Grid>
                                                     <global:SliceControl
@@ -1988,8 +1988,8 @@
                                                         StaysOpen="False">
                                                         <Border
                                                             Padding="2"
-                                                            Background="{StaticResource EmojiFlyout.Background}"
-                                                            BorderBrush="{StaticResource EmojiFlyout.Border}"
+                                                            Background="{DynamicResource EmojiFlyout.Background}"
+                                                            BorderBrush="{DynamicResource EmojiFlyout.Border}"
                                                             BorderThickness="1"
                                                             CornerRadius="4">
                                                             <ScrollViewer
