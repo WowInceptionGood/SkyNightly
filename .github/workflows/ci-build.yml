@@ -33,9 +33,15 @@ jobs:
     - name: 4. Build NSIS
       run: makensis NSIS/SkymuBetaSetup.nsi
 
-    - name: 5. Export Release Folder to Artifacts
-      uses: actions/upload-artifact@v7
+    - name: 5. Generate build name
+      shell: pwsh
+      run: |
+        $timestamp = Get-Date -Format "yyyyMMdd-HHmmss"
+        echo "BUILD_NAME=skymu-nightly-$timestamp" >> $env:GITHUB_ENV
+
+    - name: 6. Export Release Folder to Artifacts
+      uses: actions/upload-artifact@v4
       with:
-        name: beta-build
+        name: ${{ env.BUILD_NAME }}
         path: 'NSIS/Skymu Installer (BETA).exe'
         retention-days: 7
