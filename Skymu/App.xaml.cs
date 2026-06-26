@@ -60,6 +60,7 @@ namespace Skymu
         public const string DISCORD_SERVER_INVITE = "https://skymu.app/discord";
         public const string SKYMU_WEBSITE_HELP = "https://skymu.app/wiki/about";
         public const string SKYMU_WEBSITE_PRIVACY = "https://skymu.app/legal/privacy";
+        public const string SKYMU_HOME_PACKAGE = "https://skymu.app/home/package.zip";
 
         // -----------------------------------------------------------------------------
         // External URLs.

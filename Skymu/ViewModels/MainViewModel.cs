@@ -59,6 +59,8 @@ namespace Skymu.ViewModels
         public ObservableCollection<Server> ServerList;
         public ObservableCollection<Conversation> ConversationList;
 
+        public bool IsHomeAvailable = false;
+
         // since the servers list is lazy-loaded, we need a TCS to handle the clicks on the "Servers" 
         // tab before the list has actually been populated
         private readonly TaskCompletionSource<bool> _serversLoadedSource = new TaskCompletionSource<bool>();

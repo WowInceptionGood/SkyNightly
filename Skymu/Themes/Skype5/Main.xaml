@@ -1876,7 +1876,7 @@
                                             Grid.Row="1"
                                             Visibility="Collapsed" />
                                         <Frame
-                                            x:Name="HomeUnavailable"
+                                            x:Name="HomeUnavailableFrame"
                                             Grid.Row="1"
                                             Visibility="Collapsed" />
                                         <ContentControl x:Name="FillMessagePanelHost" Visibility="Collapsed" />

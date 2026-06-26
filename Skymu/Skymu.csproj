@@ -98,17 +98,17 @@
 
 	<!-- Resource Handling -->
 	<ItemGroup>
-		<!-- Skype7 -->
-		<Resource Include="Themes\Skype7\Assets\**\*" />
-
+		<!-- Skype4 -->
+		<Resource Include="Themes\Skype4\Assets\**\*" />
+		
 		<!-- Skype5 -->
 		<Resource Include="Themes\Skype5\Assets\**\*" />
 
 		<!-- Skype6 -->
 		<Resource Include="Themes\Skype6\Assets\**\*" />
 
-		<!-- Skype4 -->
-		<Resource Include="Themes\Skype4\Assets\**\*" />
+		<!-- Skype7 -->
+		<Resource Include="Themes\Skype7\Assets\**\*" />
 
 		<!-- Emoji -->
 		<None Remove="Emoji\**\*" />
@@ -143,15 +143,7 @@
 		<Content Include="Languages\**\*">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-
-		<!-- Home as Content -->
-		<None Remove="Home\**\*" />
-		<Page Remove="Home\**\*" />
-		<EmbeddedResource Remove="Home\**\*" />
-		<Compile Remove="Home\**\*" />
-		<Content Include="Home\**\*">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
+		
 	</ItemGroup>
 	<ItemGroup>
 		<Resource Remove="Properties\**" />

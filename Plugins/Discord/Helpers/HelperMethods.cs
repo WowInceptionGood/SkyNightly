@@ -35,7 +35,7 @@ namespace Discord.Helpers
         private static string GetPath(string dir)
         {
             string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            return Path.Combine(appData, "Skymu", "LegacyDiscordAvatarsCache", dir);
+            return Path.Combine(appData, "Skymu", "discord", "LegacyAvatarCache", dir);
         }
 
         public enum DiscordChannelType

@@ -35,7 +35,7 @@ namespace Fluxer.Helpers
         private static string GetPath(string dir)
         {
             string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            return Path.Combine(appData, "Skymu", "LegacyFluxerAvatarsCache", dir);
+            return Path.Combine(appData, "Skymu", "fluxer", "LegacyAvatarCache", dir);
         }
 
         public enum FluxerChannelType

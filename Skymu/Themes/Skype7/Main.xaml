@@ -1057,7 +1057,7 @@
         <Grid Grid.Column="2" Margin="-5,0,0,0">
             <WebBrowser x:Name="browser" Visibility="Collapsed" />
             <Frame
-                x:Name="HomeUnavailable"
+                x:Name="HomeUnavailableFrame"
                 Grid.Row="1"
                 Visibility="Collapsed" />
         </Grid>

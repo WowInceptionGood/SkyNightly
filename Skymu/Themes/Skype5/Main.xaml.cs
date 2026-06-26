@@ -185,7 +185,7 @@ namespace Skymu.Skype5
                     if (Settings.EnableSkypeHome)
                         browser.Visibility = Visibility.Visible;
                     else
-                        HomeUnavailable.Visibility = Visibility.Visible;
+                        HomeUnavailableFrame.Visibility = Visibility.Visible;
                     MainPageButton.SetState(ButtonVisualState.Pressed);
                     ConversationList.SelectedItem = null;
                     SelectedContact = null;
@@ -209,7 +209,7 @@ namespace Skymu.Skype5
                     ChatProfileArea.Visibility = Visibility.Visible;
                     MessageWindow.Visibility = Visibility.Visible;
                     browser.Visibility = Visibility.Collapsed;
-                    HomeUnavailable.Visibility = Visibility.Collapsed;
+                    HomeUnavailableFrame.Visibility = Visibility.Collapsed;
 
                     MessageWindowRow.Height = new GridLength(1, GridUnitType.Star);
 
@@ -1390,7 +1390,7 @@ namespace Skymu.Skype5
             vmodel = new MainViewModel();
             this.DataContext = vmodel;
 
-            vmodel.Ready += (s, e) =>
+            vmodel.Ready += async (s, e) =>
             {
                 StatusBox.Text = Universal.CurrentUser.DisplayName;
                 StatusIcon.DefaultIndex = MainViewModel.GetIntFromStatus(
@@ -1398,11 +1398,15 @@ namespace Skymu.Skype5
                 );
                 ConfigureCompactRecentsList();
                 if (Settings.EnableSkypeHome)
-                    SkypeHome.Generate(
-                        browser,
-                        Universal.CurrentUser,
-                        vmodel.ContactList.ToList()
-                    );
+                {
+                    vmodel.IsHomeAvailable = await SkypeHome.Generate(browser, Universal.CurrentUser, vmodel.ContactList.ToList());
+                }
+                if (!Settings.EnableSkypeHome || !vmodel.IsHomeAvailable)
+                {
+                    browser.Visibility = Visibility.Collapsed;
+                    HomeUnavailableFrame.Visibility = Visibility.Visible;
+                    HomeUnavailableFrame.Content = new HomeUnavailable();
+                }
                 WindowTitle = Settings.BrandingName + "™ - " + Universal.CurrentUser.Username;
                 this.Title = WindowTitle;
                 if (Settings.AutoSpeedTest)

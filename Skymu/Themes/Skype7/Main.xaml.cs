@@ -69,7 +69,7 @@ namespace Skymu.Skype7
 
             _grouper = new MessageGrouper(vmodel.ActiveConversation);
 
-            vmodel.Ready += (s, e) =>
+            vmodel.Ready += async (s, e) =>
             {
                 LabelUsername.Text = Universal.CurrentUser?.DisplayName;
                 LabelStatus.Text = Universal.CurrentUser?.Status;
@@ -94,11 +94,15 @@ namespace Skymu.Skype7
                         );
                 };
                 if (Settings.EnableSkypeHome)
-                    SkypeHome.Generate(
-                        browser,
-                        Universal.CurrentUser,
-                        vmodel.ContactList.ToList()
-                    );
+                {
+                    vmodel.IsHomeAvailable = await SkypeHome.Generate(browser, Universal.CurrentUser, vmodel.ContactList.ToList());
+                }
+                if (!Settings.EnableSkypeHome || !vmodel.IsHomeAvailable)
+                {
+                    browser.Visibility = Visibility.Collapsed;
+                    HomeUnavailableFrame.Visibility = Visibility.Visible;
+                    HomeUnavailableFrame.Content = new HomeUnavailable();
+                }
                 Universal.ShowMessage("The Skype 7 theme is expiremental, having been ported from an older project (SeanKype)" +
                     " that was developed by different people.\n\n" +
                     "It has numerous bugs, structural issues, design flaws, and differences with the rest of the " +

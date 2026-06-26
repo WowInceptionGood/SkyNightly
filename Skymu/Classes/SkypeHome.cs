@@ -20,12 +20,14 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Security;
 using System.Text.Json;
 using System.Web;
 using System.Windows.Controls;
 using System.Windows;
+using System.IO.Compression;
 using Yggdrasil.Models;
 
 namespace Skymu
@@ -36,7 +38,7 @@ namespace Skymu
         private static User _user;
         private static List<DirectMessage> _contacts;
 
-        public static void Generate(WebBrowser browser, User user, List<DirectMessage> contacts)
+        public static async Task<bool> Generate(WebBrowser browser, User user, List<DirectMessage> contacts)
         {
             _browser = browser;
             _user = user;
@@ -44,10 +46,33 @@ namespace Skymu
             _browser.ObjectForScripting = new SkypeExternalObject(user, contacts);
             _browser.LoadCompleted += OnLoadCompleted;
 
-            // _browser.Navigate(new Uri("https://skymu.app/home")); we do not fetch Home from the internet anymore
+            string home_dir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), Universal.NAME, "HomeCache");
+            string home_index = Path.Combine(home_dir, "index.html");
+            if (!File.Exists(home_index))
+            {
+                try
+                {
+                    using (HttpResponseMessage response = await Universal.SkymuHttpClient.GetAsync(Universal.SKYMU_HOME_PACKAGE, HttpCompletionOption.ResponseHeadersRead))
+                    {
+                        response.EnsureSuccessStatusCode();
 
+                        using (Stream downloadStream = await response.Content.ReadAsStreamAsync())
+                        {
+                            using (MemoryStream memoryStream = new MemoryStream())
+                            {
+                                await downloadStream.CopyToAsync(memoryStream);
+                                memoryStream.Position = 0;
 
-            string local_path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Home", "index.html");
+                                using (ZipArchive archive = new ZipArchive(memoryStream))
+                                {
+                                    archive.ExtractToDirectory(home_dir);
+                                }
+                            }
+                        }
+                    }
+                }
+                catch { return false; } // home could not be generated
+            }
             bool ie9 = false;
             // https://web.biz-prog.net/praxis/ie/version.html
             try
@@ -64,16 +89,17 @@ namespace Skymu
             {
                 // file://127.0.0.1/c$/path/to/Home/index.html
                 // https://stackoverflow.com/a/956152
-                local_path = $"file://127.0.0.1/{local_path.Substring(0, 1)}${local_path.Substring(2)}";
-                Debug.WriteLine($"[SKYPE-HOME] Navigating to local path: {local_path}");
-                _browser.Navigate(new Uri(local_path));
+                home_index = $"file://127.0.0.1/{home_index.Substring(0, 1)}${home_index.Substring(2)}";
+                Debug.WriteLine($"[SKYPE-HOME] Navigating to local path: {home_index}");
+                _browser.Navigate(new Uri(home_index));
             }
             else
             {
                 // C:\path\to\Home\index.html
-                Debug.WriteLine($"[SKYPE-HOME] Navigating to local path: {local_path}");
-                _browser.Navigate(new Uri(local_path));
+                Debug.WriteLine($"[SKYPE-HOME] Navigating to local path: {home_index}");
+                _browser.Navigate(new Uri(home_index));
             }
+            return true; // home has been generated
         }
 
         internal static void InvokeEval(string script)
@@ -498,7 +524,7 @@ namespace Skymu
         // TODO: Make this accurate once Yggdrasil implements it
         public bool hasCapability(int cap)
         {
-            switch((CapabilityMap)cap)
+            switch ((CapabilityMap)cap)
             {
                 case CapabilityMap.voicemail: return false;
                 case CapabilityMap.callforward: return false;
