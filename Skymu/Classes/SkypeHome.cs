@@ -12,6 +12,7 @@
 /*==========================================================*/
 
 using Microsoft.Win32;
+using Skymu.Packaging;
 using Skymu.Preferences;
 using System;
 using System.Collections.Generic;
@@ -20,14 +21,12 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Net.Http;
-using System.Threading.Tasks;
 using System.Security;
 using System.Text.Json;
+using System.Threading.Tasks;
 using System.Web;
-using System.Windows.Controls;
 using System.Windows;
-using System.IO.Compression;
+using System.Windows.Controls;
 using Yggdrasil.Models;
 
 namespace Skymu
@@ -50,28 +49,7 @@ namespace Skymu
             string home_index = Path.Combine(home_dir, "index.html");
             if (!File.Exists(home_index))
             {
-                try
-                {
-                    using (HttpResponseMessage response = await Universal.SkymuHttpClient.GetAsync(Universal.SKYMU_HOME_PACKAGE, HttpCompletionOption.ResponseHeadersRead))
-                    {
-                        response.EnsureSuccessStatusCode();
-
-                        using (Stream downloadStream = await response.Content.ReadAsStreamAsync())
-                        {
-                            using (MemoryStream memoryStream = new MemoryStream())
-                            {
-                                await downloadStream.CopyToAsync(memoryStream);
-                                memoryStream.Position = 0;
-
-                                using (ZipArchive archive = new ZipArchive(memoryStream))
-                                {
-                                    archive.ExtractToDirectory(home_dir);
-                                }
-                            }
-                        }
-                    }
-                }
-                catch { return false; } // home could not be generated
+                if (!await Package.Install("skymu-home-5", home_dir)) return false;
             }
             bool ie9 = false;
             // https://web.biz-prog.net/praxis/ie/version.html
