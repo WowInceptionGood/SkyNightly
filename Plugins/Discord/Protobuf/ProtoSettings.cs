@@ -26,7 +26,7 @@ namespace Discord.Protobuf
     {
         private string DscToken;
         // The API instance used by Skymu
-        internal static readonly DiscordHttpClient api = new DiscordHttpClient();
+        internal static readonly DiscordClient api = new DiscordClient();
         // The generated class from Google's Protobuf
         public PreloadedUserSettings _proto;
         // Endpoints necessary fetching and setting Proto settings

@@ -47,8 +47,8 @@ namespace Tox
         public bool SupportsVideoCalls => false;
         public AuthTypeInfo[] AuthenticationTypes => new[]
         {
-            new AuthTypeInfo(AuthenticationMethod.Password, "Profile name", "Encrypted save"),
-            new AuthTypeInfo(AuthenticationMethod.Token, "Profile name", "Unencrypted save")
+            new AuthTypeInfo(AuthenticationMethod.Password, "Profile name", "encrypted save"),
+            new AuthTypeInfo(AuthenticationMethod.Token, "Profile name", "unencrypted save")
         };
         public ObservableCollection<ExtraConfiguration> ExtraConfigurations => new ObservableCollection<ExtraConfiguration>()
         {
@@ -201,7 +201,7 @@ namespace Tox
                 if (!File.Exists(Path.Combine(toxDir, profile + ".tox")))
                 {
                     TaskCompletionSource<bool> tcs = new TaskCompletionSource<bool>();
-                    DialogTube?.Invoke(this, new DialogBottle(DialogType.Question,
+                    DialogTube?.Invoke(this, new DialogBottle(DialogType.Choice,
                         "Are you sure that you want to create an encrypted profile? Since the password is not stored, avoid this option unless you want the security.",
                         (yes) => tcs.TrySetResult(yes)));
                     bool choice = await tcs.Task;

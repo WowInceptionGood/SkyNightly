@@ -24,7 +24,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using OmegaAOL.Bifrost.Tls;
 
-namespace OmegaAOL.Bifrost.Engine
+namespace OmegaAOL.Bifrost.Http
 {
     public sealed class BifrostEngine : HttpMessageHandler // i still am surprised HttpClient has an overload to accept a custom HttpMH, given that at this time there were literally none
     {

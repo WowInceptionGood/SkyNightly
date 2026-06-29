@@ -66,7 +66,7 @@ namespace Discord
         // The Discord token used by all of the Discord plugin
         private string DiscordToken;
         // We reuse this to avoid creating more DiscordHttpClient instances, which is quite heavy
-        internal static readonly DiscordHttpClient Client = new DiscordHttpClient();
+        internal static readonly DiscordClient Client = new DiscordClient();
         private ProtoSettings proto;
         internal AuthSocket authSocket = new AuthSocket();
         // Track the active channel ID for real-time updates

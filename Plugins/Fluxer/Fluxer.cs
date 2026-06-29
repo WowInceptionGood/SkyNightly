@@ -11,6 +11,12 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 /*==========================================================*/
 
+// Fork of the Discord plugin because after looking at the
+// OpenAPI spec for both I realized that they're very
+// similiar, likely on purpose.
+
+// EXPERIMENTAL. Avoid shipping with release. 
+
 using Fluxer.Helpers;
 using Fluxer.Networking;
 using Fluxer.Networking.Managers;
@@ -32,10 +38,6 @@ using Yggdrasil.Bottles;
 using Yggdrasil.Models;
 using Yggdrasil.Enumerations;
 
-// Fork of the Discord plugin because after looking at the
-// OpenAPI spec for both I realized that they're very
-// similiar, likely on purpose.
-
 namespace Fluxer
 {
     public class Core : ICore
@@ -50,7 +52,7 @@ namespace Fluxer
         public event EventHandler<DialogBottle> DialogTube;
         public event EventHandler<MessageBottle> MessageTube;
         public event EventHandler<ListBottle> ListTube;
-        public string Name { get { return "Fluxer"; } }
+        public string Name { get { return "Fluxer (experimental)"; } }
         public string InternalName { get { return "fluxer"; } }
         public bool SupportsServers { get { return true; } }
         public AuthTypeInfo[] AuthenticationTypes
@@ -59,8 +61,8 @@ namespace Fluxer
             {
                 return new[]
                 {
-                    new AuthTypeInfo(AuthenticationMethod.Password, "Email"),
-                    new AuthTypeInfo(AuthenticationMethod.Token, "Token")
+                    new AuthTypeInfo(AuthenticationMethod.Password),
+                    new AuthTypeInfo(AuthenticationMethod.Token)
                 };
             }
         }
@@ -137,6 +139,8 @@ namespace Fluxer
 
         public async Task<LoginResult> Authenticate(AuthenticationMethod authType, string username, string password = null)
         {
+            DialogTube?.Invoke(this, new DialogBottle(DialogType.Warning, "Fluxer support in Skymu is highly experimental. " +
+            "We make no guarantees regarding any functionality in this plugin. It might not even log in.\n\nYou have been warned."));
             if (authType == AuthenticationMethod.Token) FluxerToken = username;
             else if (authType == AuthenticationMethod.Password)
             {

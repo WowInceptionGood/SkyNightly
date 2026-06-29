@@ -37,7 +37,7 @@ using Yggdrasil;
 using Yggdrasil.Models;
 using Yggdrasil.Enumerations;
 using Yggdrasil.Bottles;
-using OmegaAOL.Bifrost;
+using OmegaAOL.Bifrost.Http;
 
 namespace Skymu
 {
@@ -149,7 +149,7 @@ namespace Skymu
                 case DialogType.Information:
                     PluginPopup(sender, e, "Message from plugin ", WindowBase.IconType.Information);
                     break;
-                case DialogType.Question:
+                case DialogType.Choice:
                     Current.Dispatcher.BeginInvoke(
                         new Action(
                             delegate

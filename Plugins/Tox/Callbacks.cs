@@ -257,7 +257,7 @@ namespace Tox
                 return;
             }
             core.SYN(new DialogBottle(
-                DialogType.Question,
+                DialogType.Choice,
                 $"Do you want to accept the friend request from {BATS(pkey)} with the message: {message}",
                 accept =>
                 {

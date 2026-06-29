@@ -24,7 +24,7 @@ using System.Threading.Tasks;
 using Yggdrasil;
 using Yggdrasil.Models;
 using Yggdrasil.Enumerations;
-using OmegaAOL.Bifrost;
+using OmegaAOL.Bifrost.Http;
 
 namespace Matrix
 {
@@ -44,7 +44,7 @@ namespace Matrix
                 AuthenticationMethod.Password,
                 "Identifier (@username:homeserver.com)"
             ),
-            new AuthTypeInfo(AuthenticationMethod.Passwordless, "Email", "Beeper"),
+            new AuthTypeInfo(AuthenticationMethod.Passwordless, "Email", "Beeper (experimental)"),
         };
 
         private string _accessToken;
@@ -80,7 +80,7 @@ namespace Matrix
             string username,
             string password = null)
         {
-            if (authType == AuthenticationMethod.Password)
+            if (authType == AuthenticationMethod.Password) // normal
             {
                 if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
                 {
@@ -155,8 +155,11 @@ namespace Matrix
                     return LoginResult.Failure;
                 }
             }
-            else if (authType == AuthenticationMethod.Passwordless)
+            else if (authType == AuthenticationMethod.Passwordless) // beeper
             {
+                DialogTube?.Invoke(this, new DialogBottle(DialogType.Warning, "Beeper support in Skymu is highly experimental. " +
+               "We make no guarantees regarding any functionality in this plugin. It will likely not fetch your cross-platform messages." +
+               "\n\nYou have been warned."));
                 if (string.IsNullOrEmpty(username))
                 {
                     DialogTube?.Invoke(this, new DialogBottle(DialogType.Error, "Email address is required."));

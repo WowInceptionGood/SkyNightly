@@ -27,7 +27,7 @@ namespace Yggdrasil.Enumerations
         Error,
         Warning,
         Information,
-        Question
+        Choice
     }
 
     public enum ListType

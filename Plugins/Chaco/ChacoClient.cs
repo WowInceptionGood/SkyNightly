@@ -20,6 +20,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
+using OmegaAOL.Bifrost.Http;
 
 namespace Chaco
 {
@@ -45,7 +46,7 @@ namespace Chaco
 
             _baseUrl = baseUrl.TrimEnd('/');
 
-            _http = new HttpClient(new OmegaAOL.Bifrost.BifrostEngine())
+            _http = new HttpClient(new BifrostEngine())
             {
                 Timeout = Timeout.InfiniteTimeSpan
             };
