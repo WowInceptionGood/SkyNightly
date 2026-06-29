@@ -411,7 +411,7 @@ namespace Fluxer
                             channelList.Add(new ServerChannel(channelName, channelId, guildId, 0, channelType, parentId, position));
                         }
                     }
-                    results.Add(new Server(guildName, guildId, null, channelList.ToArray(), guildAvatar, categoryMap, memberCount));
+                    results.Add(new Server(guildName, guildId, null, null, channelList, guildAvatar, categoryMap, memberCount));
                 }
             }
             catch (Exception ex)

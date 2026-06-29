@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Xml.Linq;
 using Yggdrasil.Enumerations;
 
 namespace Yggdrasil.Models
@@ -60,6 +61,45 @@ namespace Yggdrasil.Models
     {
         protected Participant(string displayName, string identifier, byte[] avatar = null)
             : base(displayName, identifier, avatar) { }
+    }
+
+    public class Role : Metadata
+    {
+        private uint _hex_color;
+        private bool _hoist;
+        private bool _mentionable;
+
+        public uint HexColor
+        {
+            get => _hex_color;
+            set => Set(ref _hex_color, value, nameof(HexColor));
+        }
+
+        public bool Hoist
+        {
+            get => _hoist;
+            set => Set(ref _hoist, value, nameof(Hoist));
+        }
+
+        public bool Mentionable
+        {
+            get => _mentionable;
+            set => Set(ref _mentionable, value, nameof(Mentionable));
+        }
+
+        public Role(
+            string title,
+            string identifier,
+            uint hex_color = 0,
+            byte[] avatar = null,
+            bool hoist = false,
+            bool mentionable = false
+        ) : base(title, identifier, avatar)
+        {
+            _hex_color = hex_color;
+            _hoist = hoist;
+            _mentionable = mentionable;
+        }
     }
 
     public class User : Participant
@@ -181,18 +221,25 @@ namespace Yggdrasil.Models
 
     public class Server : Metadata
     {
-        private User[] _members;
-        private ServerChannel[] _channels;
+        private List<ServerMember> _members;
+        private List<Role> _roles;
+        private List<ServerChannel> _channels;
         private ObservableCollection<object> _groupedChannels;
         private int _memberCount;
 
-        public User[] Members
+        public List<ServerMember> Members
         {
             get => _members;
             set => Set(ref _members, value, nameof(Members));
         }
 
-        public ServerChannel[] Channels
+        public List<Role> Roles
+        {
+            get => _roles;
+            set => Set(ref _roles, value, nameof(Roles));
+        }
+
+        public List<ServerChannel> Channels
         {
             get => _channels;
             set => Set(ref _channels, value, nameof(Channels));
@@ -215,8 +262,9 @@ namespace Yggdrasil.Models
         public Server(
             string name,
             string identifier,
-            User[] members,
-            ServerChannel[] channels,
+            List<ServerMember> members,
+            List<Role> roles,
+            List<ServerChannel> channels,
             byte[] profile_picture = null,
             Dictionary<string, string> category_map = null,
             int member_count = 0
@@ -224,10 +272,11 @@ namespace Yggdrasil.Models
             : base(name, identifier, profile_picture)
         {
             _members = members;
+            _roles = roles;
             _channels = channels;
             CategoryMap = category_map ?? new Dictionary<string, string>();
             _groupedChannels = new ObservableCollection<object>();
-            _memberCount = member_count == 0 && members != null ? members.Length : member_count;
+            _memberCount = member_count == 0 && members != null ? members.Count : member_count;
         }
     }
 
@@ -258,6 +307,23 @@ namespace Yggdrasil.Models
             CategoryID = category_id;
             Position = position;
         }
+    }
+
+    public class ServerMember
+    {
+        public User User { get; }
+        public List<Role> Roles { get; }
+        public string Nickname { get; set; }
+        public DateTime? JoinDate { get; }
+
+        public ServerMember(User user, List<Role> roles = null, string nickname = null, DateTime? join_date = null)
+        {
+            User = user;
+            Roles = roles ?? new List<Role>();
+            Nickname = nickname;
+            JoinDate = join_date;
+        }
+
     }
 
     public class Attachment

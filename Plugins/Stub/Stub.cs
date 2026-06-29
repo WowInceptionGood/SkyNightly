@@ -26,6 +26,7 @@ using Yggdrasil;
 using Yggdrasil.Models;
 using Yggdrasil.Bottles;
 using Yggdrasil.Enumerations;
+using System.Linq;
 
 namespace Stub
 {
@@ -348,12 +349,13 @@ namespace Stub
                 new Server(
                     "Epic gamer soyciety",
                     id,
-                    users,
+                    null,
+                    null,
                     new ServerChannel[]
                     {
                         new ServerChannel("channel1", "2132/1", id, 0, ChannelType.Standard),
-                        new ServerChannel("rtead only", "2132/2", id, 0, ChannelType.ReadOnly),
-                    }
+                        new ServerChannel("read only", "2132/2", id, 0, ChannelType.ReadOnly),
+                    }.ToList()
                 )
             );
             return Task.FromResult(servers);

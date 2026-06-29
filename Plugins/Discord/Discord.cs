@@ -316,6 +316,7 @@ namespace Discord
 
                     var channelList = new List<ServerChannel>();
                     var categoryMap = new Dictionary<string, string>();
+                    var roleList = new List<Role>();
 
                     if (guildNode["channels"] is JsonArray channels)
                     {
@@ -394,7 +395,33 @@ namespace Discord
                             channelList.Add(new ServerChannel(channelName, channelId, guildId, 0, channelType, parentId, position));
                         }
                     }
-                    results.Add(new Server(guildName, guildId, null, channelList.ToArray(), guildAvatar, categoryMap, memberCount));
+
+                    if (guildNode["roles"] is JsonArray roles)
+                    {
+                        foreach (var r in roles.OfType<JsonObject>())
+                        {
+                            string roleId = r["id"]?.GetValue<string>();
+                            string roleName = r["name"]?.GetValue<string>();
+                            if (string.IsNullOrWhiteSpace(roleId)) continue;
+
+                            int permissions = 0;
+                            int.TryParse(r["permissions"]?.ToString(), out permissions);
+
+                            uint color = 0;
+                            uint.TryParse(r["color"]?.ToString(), out color);
+
+                            int position = 0;
+                            int.TryParse(r["position"]?.ToString(), out position);
+
+                            bool hoist = r["hoist"]?.GetValue<bool>() ?? false;
+                            bool mentionable = r["mentionable"]?.GetValue<bool>() ?? false;
+
+                            // TODO add role icons like Aerochat
+                            roleList.Add(new Role(roleName, roleId, color, null, hoist, mentionable));
+                        }
+                    }
+
+                    results.Add(new Server(guildName, guildId, null, roleList, channelList, guildAvatar, categoryMap, memberCount));
                 }
             }
             catch (Exception ex)
