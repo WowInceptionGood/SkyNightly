@@ -1043,16 +1043,11 @@ namespace Skymu.ViewModels
                 var data = await Universal.SkymuHttpClient.GetByteArrayAsync(TEST_URL);
                 sw.Stop();
                 double mbps = data.Length * 8.0 / 1_000_000 / sw.Elapsed.TotalSeconds;
-                if (mbps >= 50)
-                    final += "5";
-                else if (mbps >= 20)
-                    final += "4";
-                else if (mbps >= 10)
-                    final += "3";
-                else if (mbps >= 5)
-                    final += "2";
-                else
-                    final += "1";
+                final += mbps >= 50 ? "5"
+                       : mbps >= 20 ? "4"
+                       : mbps >= 10 ? "3"
+                       : mbps >= 5 ? "2"
+                       : "1";
             }
             catch
             {
