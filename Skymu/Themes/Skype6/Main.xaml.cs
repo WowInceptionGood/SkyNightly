@@ -772,7 +772,7 @@ namespace Skymu.Skype6
             frame.Navigate(screen);
             SetCallPageLocation(initial_location);
 
-            await screen.StartCall(vmodel.SelectedConversation, false);
+            await screen.StartCall(conversation, false);
         }
 
         private void OnLocationChanged(object sender, CallScreen.LocationChangeEventArgs e)
