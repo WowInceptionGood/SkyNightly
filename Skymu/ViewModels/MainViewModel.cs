@@ -1011,7 +1011,7 @@ namespace Skymu.ViewModels
 
         public async Task RunSpeedTest()
         {
-            const string TEST_URL = "https://speed.cloudflare.com/__down?bytes=10485760";
+            const string TEST_URL = "https://speed.cloudflare.com/__down?bytes=3485760";
             const string PREFIX = "network-";
 
             var cts = new CancellationTokenSource();

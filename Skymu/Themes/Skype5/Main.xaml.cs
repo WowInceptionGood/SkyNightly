@@ -1532,9 +1532,6 @@ namespace Skymu.Skype5
             Universal.Lang.PropertyChanged += RefreshCreds;
             RefreshCreds();
 
-
-            //HomeUnavailable.Navigate(new Forms.HomeUnavailable());
-
             SourceInitialized += (s, e) =>
             {
                 if (Settings.SaveWindowPosition && Settings.Width >= 0.0)

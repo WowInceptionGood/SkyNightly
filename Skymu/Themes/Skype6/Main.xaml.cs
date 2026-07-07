@@ -1198,8 +1198,6 @@ namespace Skymu.Skype6
             btnContacts.OverlayText.TextTrimming = TextTrimming.None;
             btnRecents.OverlayText.TextTrimming = TextTrimming.None;
 
-            //HomeUnavailable.Navigate(new HomeUnavailable());
-
             SourceInitialized += (s, e) =>
             {
                 _mmbController = new MMBController(this);
