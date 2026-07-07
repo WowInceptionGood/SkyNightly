@@ -191,9 +191,9 @@ namespace Yggdrasil.Bottles
             FailReason = fail_reason;
         }
 
-        public CallBottle(string convo_id, CallState state, Conversation caller)
+        public CallBottle(Conversation caller, CallState state)
         {
-            ConversationId = convo_id;
+            ConversationId = caller.Identifier;
             State = state;
             Caller = caller;
         }
