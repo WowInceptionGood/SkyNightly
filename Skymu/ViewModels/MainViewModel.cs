@@ -371,7 +371,7 @@ namespace Skymu.ViewModels
         private async Task LoadAndCacheServers()
         {
             List<Server> servers = await Universal.Plugin.FetchServers();
-            //_database?.Servers.Write(servers); // TODO add servers to database
+            _database?.Servers.Write(servers); // TODO add servers to database
             ServerList = new ObservableCollection<Server>(servers);
             _serversLoadedSource.TrySetResult(true);
         }

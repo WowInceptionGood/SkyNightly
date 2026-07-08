@@ -1038,8 +1038,9 @@ SanitizeFolderName(user.Identifier)
                         icon                                    BLOB,
                         banner                                  BLOB,
                         description                             TEXT,
-                        join_url                                TEXT,
-                        member_count                            INTEGER
+                        invite                                  TEXT,
+                        member_count                            INTEGER,
+                        position                                INTEGER
                     );
 
                     CREATE TABLE IF NOT EXISTS SMSes (
@@ -1741,6 +1742,144 @@ SanitizeFolderName(user.Identifier)
                 }
 
                 _db.Participants.Write(conversations);
+                return true;
+            }
+        }
+
+        #endregion
+
+        #region Servers
+
+        public class ServersTable
+        {
+            private readonly DatabaseManager _db;
+
+            public ServersTable(DatabaseManager db)
+            {
+                _db = db;
+            }
+
+            public List<Server> Read() // JUMP server read
+            {
+                var result = new List<Server>();
+
+                using (SqliteConnection connection = _db.CreateConnection())
+                using (SqliteCommand cmd = connection.CreateCommand())
+                {
+                    cmd.CommandText =
+                        @"
+            SELECT id, identity, name, folder_id, icon, banner,
+                   description, invite, member_count, position
+            FROM Servers
+            ORDER BY position ASC;";
+
+                    using (SqliteDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string identity = reader.GetString(1);
+                            string name = reader.IsDBNull(2) ? string.Empty : reader.GetString(2);
+                            string folderId = reader.IsDBNull(3) ? string.Empty : reader.GetString(3);
+                            byte[] icon = reader.IsDBNull(4) ? null : (byte[])reader["icon"];
+                            byte[] banner = reader.IsDBNull(5) ? null : (byte[])reader["banner"];
+                            string description = reader.IsDBNull(6) ? string.Empty : reader.GetString(6);
+                            string invite = reader.IsDBNull(7) ? string.Empty : reader.GetString(7);
+                            int memberCount = reader.IsDBNull(8) ? 0 : reader.GetInt32(8);
+                            int position = reader.IsDBNull(9) ? 0 : reader.GetInt32(9);
+
+                            Server server = new Server(
+                                name,
+                                identity,
+                                null,
+                                null,
+                                null,
+                                icon,
+                                null,
+                                memberCount,
+                                description,
+                                position,
+                                invite
+                            );
+
+
+                            result.Add(server);
+                        }
+                    }
+                }
+
+                return result;
+            }
+
+            public bool Write(IEnumerable<Server> servers) // JUMP server write
+            {
+                using (SqliteConnection connection = _db.CreateConnection())
+                {
+                    SqliteTransaction transaction = connection.BeginTransaction();
+                    try
+                    {
+                        using (SqliteCommand cmd = connection.CreateCommand())
+                        {
+                            cmd.Transaction = transaction;
+                            cmd.CommandText =
+                                @"
+                                INSERT INTO Servers (
+                                    identity, name, folder_id, icon, banner,
+                                    description, invite, member_count, position
+                                )
+                                VALUES (
+                                    @identity, @name, @folder_id, @icon, @banner, 
+                                    @description, @invite, @member_count, @position
+                                )
+                                ON CONFLICT(identity) DO UPDATE SET
+                                    name                    = excluded.name,
+                                    folder_id               = excluded.folder_id,
+                                    icon                    = excluded.icon,
+                                    banner                  = excluded.banner,
+                                    description             = excluded.description,
+                                    invite                  = excluded.invite,
+                                    member_count            = excluded.member_count,
+                                    position                = excluded.position;";
+
+                            cmd.Parameters.Add("@identity", SqliteType.Text);
+                            cmd.Parameters.Add("@name", SqliteType.Text);
+                            cmd.Parameters.Add("@folder_id", SqliteType.Text);
+                            cmd.Parameters.Add("@icon", SqliteType.Blob);
+                            cmd.Parameters.Add("@banner", SqliteType.Blob);
+                            cmd.Parameters.Add("@description", SqliteType.Text);
+                            cmd.Parameters.Add("@invite", SqliteType.Text);
+                            cmd.Parameters.Add("@member_count", SqliteType.Integer);
+                            cmd.Parameters.Add("@position", SqliteType.Integer);
+
+                            foreach (Server server in servers)
+                            {
+                                cmd.Parameters["@identity"].Value =
+                                    (object)server.Identifier;
+                                cmd.Parameters["@name"].Value =
+                                    (object)server.DisplayName ?? DBNull.Value;
+                                cmd.Parameters["@folder_id"].Value = DBNull.Value;
+                                cmd.Parameters["@icon"].Value =
+                                    (object)server.Avatar ?? DBNull.Value;
+                                cmd.Parameters["@banner"].Value = DBNull.Value;
+                                cmd.Parameters["@description"].Value =
+                                    (object)server.Description ?? DBNull.Value;
+                                cmd.Parameters["@invite"].Value =
+                                    (object)server.Invite ?? DBNull.Value;
+                                cmd.Parameters["@member_count"].Value =
+                                    (object)server.MemberCount ?? DBNull.Value;
+                                cmd.Parameters["@position"].Value =
+                                    (object)server.Position ?? DBNull.Value;
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+                        transaction.Commit();
+                    }
+                    catch (Exception)
+                    {
+                        transaction.Rollback();
+                        throw;
+                    }
+                }
+
                 return true;
             }
         }
