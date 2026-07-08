@@ -58,6 +58,8 @@ namespace Skymu.Databases
         public ParticipantsTable Participants { get; private set; }
         public MessagesTable Messages { get; private set; }
 
+        public ServersTable Servers { get; private set; }
+
         internal Dictionary<string, User> _contactMap;
 
         public DatabaseManager(User user, string custom_db_folder = null)
@@ -88,6 +90,7 @@ SanitizeFolderName(user.Identifier)
             Conversations = new ConversationsTable(this);
             Participants = new ParticipantsTable(this);
             Messages = new MessagesTable(this);
+            Servers = new ServersTable(this);
 
             using (SqliteConnection connection = CreateConnection())
             {
