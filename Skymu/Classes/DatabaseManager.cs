@@ -49,7 +49,7 @@ namespace Skymu.Databases
         // or just when you feel like your changes could cause incompatibilities with old databases.
         // Increment this number liberally. DO NOT use migration functions etc as an alternative to
         // incrementing the number. Originally started at: 1.
-        private const int Version = 4;
+        private const int Version = 5;
 
         internal string DbPath;
         public AccountsTable Accounts { get; private set; }
@@ -1667,14 +1667,14 @@ SanitizeFolderName(user.Identifier)
                                 @"
                                 INSERT INTO Conversations (
                                     is_permanent, identity, conversation_id, type, displayname, given_displayname,
-                                    meta_topic, dialog_partner, 
+                                    meta_topic, meta_picture, dialog_partner, 
                                     creator, creation_timestamp,
                                     last_message_id, last_activity_timestamp,
                                     is_bookmarked, is_blocked, my_status
                                 )
                                 VALUES (
                                     @is_permanent, @identity, @conversation_id, @type, @displayname, @given_displayname,
-                                    @meta_topic, @dialog_partner,
+                                    @meta_topic, @meta_picture, @dialog_partner,
                                     NULL, NULL,
                                     NULL, NULL,
                                     0, 0, 0
@@ -1683,6 +1683,7 @@ SanitizeFolderName(user.Identifier)
                                     displayname             = excluded.displayname,
                                     given_displayname       = excluded.given_displayname,
                                     meta_topic              = excluded.meta_topic,
+                                    meta_picture            = excluded.meta_picture,
                                     dialog_partner          = excluded.dialog_partner;";
 
                             cmd.Parameters.Add("@is_permanent", SqliteType.Integer);
@@ -1692,6 +1693,7 @@ SanitizeFolderName(user.Identifier)
                             cmd.Parameters.Add("@displayname", SqliteType.Text);
                             cmd.Parameters.Add("@given_displayname", SqliteType.Text);
                             cmd.Parameters.Add("@meta_topic", SqliteType.Text);
+                            cmd.Parameters.Add("@meta_picture", SqliteType.Blob);
                             cmd.Parameters.Add("@dialog_partner", SqliteType.Text);
 
                             foreach (Conversation conversation in conversations)
@@ -1729,6 +1731,8 @@ SanitizeFolderName(user.Identifier)
                                 cmd.Parameters["@given_displayname"].Value = DBNull.Value; // TODO add nickname support
                                 cmd.Parameters["@meta_topic"].Value =
                                     (object)conversation.DisplayName ?? DBNull.Value;
+                                cmd.Parameters["@meta_picture"].Value =
+                                    (object)conversation.Avatar ?? DBNull.Value;
                                 cmd.Parameters["@dialog_partner"].Value =
                                     (object)ConvertIdentifier(dialogPartner) ?? DBNull.Value;
 
