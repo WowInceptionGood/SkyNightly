@@ -90,17 +90,17 @@ namespace Skymu.Skype5
             {
                 Password.Foreground = new SolidColorBrush(Colors.DarkGray);
                 PasswordTokenBox.IsEnabled = false;
-                Password.Text = "field not required";
+                Password.Text = Universal.Lang["skymuLOGIN_NOTREQUIRED"];
                 Password.FontStyle = FontStyles.Italic;
 
                 switch (listing.AuthenticationType)
                 {
                     case AuthenticationMethod.QRCode:
-                        LoginButton.Text = "Scan QR code";
+                        LoginButton.Text = Universal.Lang["skymuLOGIN_QRCODEBTN"];
                         SkypeName.Foreground = new SolidColorBrush(Colors.DarkGray);
                         UsernameBox.IsEnabled = false;
                         SkypeName.FontStyle = FontStyles.Italic;
-                        SkypeName.Text = "field not required";
+                        SkypeName.Text = Universal.Lang["skymuLOGIN_NOTREQUIRED"];
                         break;
                     case AuthenticationMethod.Passwordless:
                         LoginButton.Text = "Send code";

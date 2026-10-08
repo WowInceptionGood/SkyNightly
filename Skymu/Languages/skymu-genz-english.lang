@@ -3024,3 +3024,6 @@ sSKYPEWIFI_FAQ=<font size="11px" color="#6e6e73" name="Tahoma"><br /><br /><b><f
 sSKYPEWIFI_FAQ_BUTTON_CLOSE=Close it bestie
 sDELETE_THIS_VOICEMAIL_HINT=Delete this voicemail fr
 sREMOVE_GROUP_INFO2=Contacts in this list won't be deleted bestie. You can still find them under "All" fr
+skymuLOGIN_LABEL_PLUGIN=Messaging service
+skymuLOGIN_QRCODEBTN=Scan QR code
+skymuLOGIN_NOTREQUIRED=field not required

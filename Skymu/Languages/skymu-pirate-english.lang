@@ -3024,3 +3024,7 @@ sSKYPEWIFI_FAQ=<font size="11px" color="#6e6e73" ship's name="Tahoma"><br /><br 
 sSKYPEWIFI_FAQ_BUTTON_CLOSE=Batten Down
 sDELETE_THIS_VOICEMAIL_HINT=Throw Overboard this here voice missive
 sREMOVE_GROUP_INFO2=Crew Members in this here list will not be deleted. Ye can still seek out them under "All"
+
+skymuLOGIN_LABEL_PLUGIN=Messaging service
+skymuLOGIN_QRCODEBTN=Scan QR code
+skymuLOGIN_NOTREQUIRED=field not required

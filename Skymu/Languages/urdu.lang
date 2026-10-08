@@ -3026,3 +3026,7 @@ sSKYPEWIFI_FAQ=<font size="11px" color="#6e6e73" name="Tahoma"><br /><br /><b><f
 sSKYPEWIFI_FAQ_BUTTON_CLOSE=بند
 sDELETE_THIS_VOICEMAIL_HINT=اس صوتی پیغام کو حذف کریں۔
 sREMOVE_GROUP_INFO2=اس فہرست میں موجود رابطے حذف نہیں کیے جائیں گے۔ آپ انہیں اب بھی "سب" کے تحت تلاش کر سکتے ہیں
+
+skymuLOGIN_LABEL_PLUGIN=Messaging service
+skymuLOGIN_QRCODEBTN=Scan QR code
+skymuLOGIN_NOTREQUIRED=field not required
